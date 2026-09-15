@@ -2,724 +2,886 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mastaan Uppal — Electronics & Embedded Systems | Engineering Science @ SFU</title>
-<meta name="description" content="Mastaan Uppal — Electronics Engineering student at Simon Fraser University. PCB design, embedded systems, and hardware prototyping. Open to internships in semiconductors and embedded engineering.">
-<meta property="og:title" content="Mastaan Uppal — Electronics & Embedded Systems">
-<meta property="og:description" content="Engineering Science @ SFU. PCB design, embedded systems, hardware prototyping. From precision machines to 16 km of SkyTrain infrastructure.">
-<meta property="og:type" content="website">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mastaan Uppal — Electronics & Embedded Systems Engineering Student, SFU</title>
+<meta name="description" content="Mastaan Uppal is an Engineering Science (Electronics) student at Simon Fraser University who builds real hardware: PCB assembly and validation, FPGA/VHDL design, embedded prototypes. Field Engineer co-op on the 16 km Surrey–Langley SkyTrain expansion. Open to electronics, embedded and semiconductor internships.">
+<meta name="author" content="Mastaan Uppal">
+<meta name="theme-color" content="#0b0d10">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://mastaanuppal-dotcom.github.io/Portfolio/">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Mastaan Uppal — Electronics & Embedded Systems | SFU Engineering Science">
+<meta property="og:description" content="Hardware-first engineering student. PCB assembly & validation, VHDL on FPGA, embedded prototypes, and field engineering on a 16 km transit megaproject. Open to internships.">
 <meta property="og:url" content="https://mastaanuppal-dotcom.github.io/Portfolio/">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2305080d'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='%234ad8ff' font-family='monospace' font-weight='bold'>MU</text></svg>">
+<meta property="og:image" content="https://mastaanuppal-dotcom.github.io/Portfolio/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mastaan Uppal — Electronics & Embedded Systems engineering portfolio">
+<meta property="profile:first_name" content="Mastaan">
+<meta property="profile:last_name" content="Uppal">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mastaan Uppal — Electronics & Embedded Systems | SFU">
+<meta name="twitter:description" content="Hardware-first engineering student. PCB, FPGA/VHDL, embedded prototypes, field engineering on a 16 km SkyTrain expansion.">
+<meta name="twitter:image" content="https://mastaanuppal-dotcom.github.io/Portfolio/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230b0d10'/%3E%3Cpath d='M14 46V18h8l10 16 10-16h8v28h-8V31l-10 15-10-15v15z' fill='%23f0b64a'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Mastaan Uppal",
+  "url": "https://mastaanuppal-dotcom.github.io/Portfolio/",
+  "email": "mailto:mastaanuppal@gmail.com",
+  "telephone": "+1-236-971-4079",
+  "jobTitle": "Engineering Science Student (Electronics)",
+  "address": {"@type": "PostalAddress", "addressLocality": "Surrey", "addressRegion": "BC", "addressCountry": "CA"},
+  "alumniOf": {"@type": "CollegeOrUniversity", "name": "Simon Fraser University"},
+  "affiliation": {"@type": "CollegeOrUniversity", "name": "Simon Fraser University"},
+  "sameAs": ["https://www.linkedin.com/in/mastaan-uppal", "https://github.com/mastaanuppal-dotcom"],
+  "knowsAbout": ["Electronics", "Embedded Systems", "PCB Assembly", "VHDL", "FPGA", "AutoCAD", "Python", "C++"]
+}
+</script>
 <style>
-:root{
-  --bg:#05080d; --bg2:#080d14; --card:#0b1119; --card2:#0e1622;
-  --line:#16222f; --line2:#22323f;
-  --txt:#e9f1f4; --muted:#8da1ab; --dim:#5b6e78;
-  --acc:#4ad8ff; --acc2:#84ff57; --acc-dim:rgba(74,216,255,.12);
-  --grad:linear-gradient(92deg,#4ad8ff,#84ff57);
-  --font-d:'Space Grotesk',sans-serif; --font-b:'Inter',sans-serif; --font-m:'JetBrains Mono',monospace;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--txt);font-family:var(--font-b);line-height:1.6;overflow-x:hidden}
-::selection{background:var(--acc);color:#05080d}
-body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
-  background-image:radial-gradient(circle,rgba(141,161,171,.07) 1px,transparent 1px);
-  background-size:28px 28px}
-a{color:inherit;text-decoration:none}
-img{display:block;max-width:100%}
-section{position:relative;z-index:1}
-
-/* ---------- boot screen ---------- */
-#boot{position:fixed;inset:0;z-index:2000;background:var(--bg);display:flex;align-items:center;justify-content:center;transition:opacity .5s,visibility .5s}
-#boot.off{opacity:0;visibility:hidden}
-.boot-box{font-family:var(--font-m);font-size:clamp(.78rem,2vw,.95rem);color:var(--acc);min-width:min(440px,86vw)}
-.boot-box .ln{opacity:0;white-space:nowrap;overflow:hidden}
-.boot-box .ln.on{opacity:1}
-.boot-box .ok{color:var(--acc2)}
-.boot-box .dim{color:var(--dim)}
-.boot-bar{height:3px;background:var(--line);border-radius:99px;margin-top:14px;overflow:hidden}
-.boot-bar i{display:block;height:100%;width:0;background:var(--grad);transition:width 1.1s cubic-bezier(.3,0,.2,1);box-shadow:0 0 14px rgba(74,216,255,.8)}
-
-/* ---------- scroll progress ---------- */
-#progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--grad);z-index:1000;box-shadow:0 0 14px rgba(74,216,255,.7)}
-
-/* ---------- power spine (scroll beam) ---------- */
-#spine{position:absolute;top:0;left:clamp(14px,2.6vw,38px);width:2px;z-index:2;pointer-events:none}
-#spine .rail{position:absolute;inset:0;background:var(--line)}
-#spine .lit{position:absolute;top:0;left:0;width:100%;height:0;background:linear-gradient(180deg,rgba(74,216,255,.15),var(--acc));box-shadow:0 0 10px rgba(74,216,255,.55)}
-#comet{position:absolute;left:50%;transform:translate(-50%,-50%);width:10px;height:10px;border-radius:50%;
-  background:#dffaff;box-shadow:0 0 8px 3px rgba(74,216,255,.95),0 0 28px 12px rgba(74,216,255,.45),0 0 80px 30px rgba(74,216,255,.18)}
-#comet::after{content:'';position:absolute;left:50%;bottom:100%;transform:translateX(-50%);width:2px;height:60px;
-  background:linear-gradient(0deg,rgba(74,216,255,.9),transparent)}
-.snode{position:absolute;left:50%;transform:translate(-50%,-50%);width:11px;height:11px;border-radius:50%;
-  background:var(--bg);border:2px solid var(--line2);transition:.4s}
-.snode.lit{border-color:var(--acc);background:var(--acc);box-shadow:0 0 14px rgba(74,216,255,.9)}
-.snode .tag{position:absolute;left:18px;top:50%;transform:translateY(-50%);font-family:var(--font-m);font-size:.62rem;
-  letter-spacing:.14em;color:var(--dim);white-space:nowrap;transition:.4s;opacity:0}
-.snode.lit .tag{color:var(--acc);opacity:1}
-@media(max-width:980px){#spine{display:none}}
-
-/* ---------- HUD toasts ---------- */
-#hud{position:fixed;right:18px;bottom:18px;z-index:1500;display:flex;flex-direction:column;gap:8px;pointer-events:none}
-.toast{font-family:var(--font-m);font-size:.74rem;color:var(--acc);background:rgba(8,13,20,.92);border:1px solid rgba(74,216,255,.4);
-  border-left:3px solid var(--acc);padding:10px 16px;border-radius:6px;box-shadow:0 8px 30px rgba(0,0,0,.5),0 0 18px rgba(74,216,255,.12);
-  animation:toastIn .35s cubic-bezier(.2,.9,.3,1.2),toastOut .3s ease 2s forwards}
-@keyframes toastIn{from{transform:translateX(120%);opacity:0}to{transform:none;opacity:1}}
-@keyframes toastOut{to{transform:translateX(120%);opacity:0}}
-
-/* ---------- click sparks ---------- */
-.spark{position:fixed;width:5px;height:5px;border-radius:50%;pointer-events:none;z-index:1600;
-  background:var(--acc);box-shadow:0 0 8px rgba(74,216,255,.9);animation:sparkfly .55s ease-out forwards}
-@keyframes sparkfly{to{transform:translate(var(--dx),var(--dy)) scale(0);opacity:0}}
-
-/* ---------- nav ---------- */
-nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;
-  padding:18px clamp(20px,5vw,64px);transition:.3s;border-bottom:1px solid transparent}
-nav.scrolled{background:rgba(5,8,13,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom-color:var(--line)}
-.logo{font-family:var(--font-m);font-weight:700;font-size:1.05rem;letter-spacing:.02em}
-.logo span{color:var(--acc)}
-.nav-links{display:flex;gap:30px;align-items:center}
-.nav-links a{font-size:.86rem;font-weight:500;color:var(--muted);transition:.2s;position:relative}
-.nav-links a:hover,.nav-links a.active{color:var(--txt)}
-.nav-links a::after{content:'';position:absolute;left:0;bottom:-5px;width:0;height:1.5px;background:var(--acc);transition:.25s}
-.nav-links a:hover::after,.nav-links a.active::after{width:100%}
-.nav-cta{font-family:var(--font-m);font-size:.8rem!important;color:#05080d!important;background:var(--acc);
-  padding:9px 18px;border-radius:6px;font-weight:700;transition:.2s}
-.nav-cta:hover{box-shadow:0 0 24px rgba(74,216,255,.5);transform:translateY(-1px)}
-.nav-cta::after{display:none}
-#burger{display:none;background:none;border:none;cursor:pointer;z-index:1001;width:30px;height:22px;position:relative}
-#burger span{position:absolute;left:0;width:100%;height:2px;background:var(--txt);transition:.3s;border-radius:2px}
-#burger span:nth-child(1){top:0}#burger span:nth-child(2){top:10px}#burger span:nth-child(3){top:20px}
-#burger.open span:nth-child(1){top:10px;transform:rotate(45deg)}
-#burger.open span:nth-child(2){opacity:0}
-#burger.open span:nth-child(3){top:10px;transform:rotate(-45deg)}
-
-/* ---------- hero ---------- */
-#hero{min-height:100vh;display:flex;align-items:center;padding:120px clamp(20px,5vw,64px) 60px;position:relative;overflow:hidden}
-.hero-inner{max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1.2fr 1fr;gap:50px;align-items:center}
-.badge{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-m);font-size:.78rem;color:var(--acc);
-  border:1px solid rgba(74,216,255,.35);background:var(--acc-dim);padding:7px 15px;border-radius:99px;margin-bottom:26px}
-.badge .dot{width:7px;height:7px;border-radius:50%;background:var(--acc);animation:pulse 1.8s infinite}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(74,216,255,.55)}50%{box-shadow:0 0 0 7px rgba(74,216,255,0)}}
-h1{font-family:var(--font-d);font-size:clamp(2.5rem,6vw,4.4rem);line-height:1.04;font-weight:700;letter-spacing:-.02em;margin-bottom:18px}
-h1 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.typed-row{font-family:var(--font-m);font-size:clamp(1rem,2vw,1.2rem);color:var(--muted);margin-bottom:24px;min-height:1.8em}
-.typed-row .pre{color:var(--dim)}
-#typed{color:var(--acc)}
-.caret{display:inline-block;width:9px;height:1.15em;background:var(--acc);vertical-align:text-bottom;animation:blink 1s steps(1) infinite;margin-left:2px}
-@keyframes blink{50%{opacity:0}}
-.hero-sub{color:var(--muted);max-width:560px;font-size:1.01rem;margin-bottom:34px}
-.hero-sub b{color:var(--txt);font-weight:600}
-.btn-row{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:46px}
-.btn{font-family:var(--font-d);font-weight:600;font-size:.95rem;padding:14px 28px;border-radius:8px;transition:.25s;display:inline-flex;align-items:center;gap:9px}
-.btn-p{background:var(--acc);color:#05080d}
-.btn-p:hover{box-shadow:0 8px 32px rgba(74,216,255,.4);transform:translateY(-2px)}
-.btn-s{border:1px solid var(--line2);color:var(--txt);background:rgba(255,255,255,.02)}
-.btn-s:hover{border-color:var(--acc);color:var(--acc);transform:translateY(-2px)}
-.stats{display:flex;gap:clamp(22px,3.5vw,52px);flex-wrap:wrap}
-.stat .num{font-family:var(--font-d);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;color:var(--txt)}
-.stat .num em{color:var(--acc);font-style:normal}
-.stat .lbl{font-size:.76rem;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;margin-top:2px}
-
-/* ---------- 3D chip scene ---------- */
-.chip-scene{perspective:900px;display:flex;align-items:center;justify-content:center;min-height:380px;position:relative}
-.orbit{position:absolute;border:1px dashed rgba(74,216,255,.18);border-radius:50%}
-.orbit.o1{width:330px;height:330px;animation:orbitspin 26s linear infinite}
-.orbit.o2{width:430px;height:430px;animation:orbitspin 40s linear infinite reverse}
-@keyframes orbitspin{to{transform:rotate(360deg)}}
-.orbit .e{position:absolute;top:-4px;left:50%;width:8px;height:8px;border-radius:50%;background:var(--acc);
-  box-shadow:0 0 10px rgba(74,216,255,.9)}
-.orbit.o2 .e{background:var(--acc2);box-shadow:0 0 10px rgba(132,255,87,.9)}
-#chip{width:190px;height:190px;position:relative;transform-style:preserve-3d}
-.cface{position:absolute;inset:0;backface-visibility:visible}
-.cface.front{background:linear-gradient(135deg,#0e1826,#0a121c);border:1px solid var(--line2);border-radius:14px;
-  transform:translateZ(14px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
-  box-shadow:0 0 60px rgba(74,216,255,.12) inset}
-.cface.back{background:#070c13;border:1px solid var(--line);border-radius:14px;transform:translateZ(-14px) rotateY(180deg);
-  display:flex;align-items:center;justify-content:center}
-.cface.back::after{content:'';width:70%;height:70%;background-image:radial-gradient(circle,var(--line2) 2px,transparent 2.5px);background-size:18px 18px}
-.cedge{position:absolute;background:#0a121c;border:1px solid var(--line)}
-.cedge.t,.cedge.b{left:0;width:100%;height:28px}
-.cedge.t{top:0;transform:rotateX(90deg) translateZ(14px);transform-origin:top}
-.cedge.b{bottom:0;transform:rotateX(-90deg) translateZ(14px);transform-origin:bottom}
-.cedge.l,.cedge.r{top:0;height:100%;width:28px}
-.cedge.l{left:0;transform:rotateY(-90deg) translateZ(14px);transform-origin:left}
-.cedge.r{right:0;transform:rotateY(90deg) translateZ(14px);transform-origin:right}
-.die{width:84px;height:84px;border-radius:8px;background:linear-gradient(135deg,rgba(74,216,255,.25),rgba(132,255,87,.15));
-  border:1px solid rgba(74,216,255,.5);display:flex;align-items:center;justify-content:center;
-  font-family:var(--font-m);font-weight:700;font-size:1.5rem;color:var(--acc);
-  box-shadow:0 0 26px rgba(74,216,255,.35),0 0 60px rgba(74,216,255,.12);animation:diepulse 3s ease-in-out infinite}
-@keyframes diepulse{0%,100%{box-shadow:0 0 26px rgba(74,216,255,.35)}50%{box-shadow:0 0 44px rgba(74,216,255,.6)}}
-.chip-label{font-family:var(--font-m);font-size:.6rem;color:var(--dim);letter-spacing:.18em}
-.pins{position:absolute;display:flex;justify-content:space-around}
-.pins.pt,.pins.pb{left:18px;right:18px;height:12px}
-.pins.pt{top:-12px}.pins.pb{bottom:-12px}
-.pins.pl,.pins.pr{top:18px;bottom:18px;width:12px;flex-direction:column}
-.pins.pl{left:-12px}.pins.pr{right:-12px}
-.pins i{background:linear-gradient(180deg,#3a4a58,#1c2733);border-radius:2px}
-.pins.pt i,.pins.pb i{width:7px;height:100%}
-.pins.pl i,.pins.pr i{height:7px;width:100%}
-.chip-caption{position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);font-family:var(--font-m);
-  font-size:.68rem;color:var(--dim);letter-spacing:.15em;white-space:nowrap}
-.chip-caption b{color:var(--acc);font-weight:400}
-
-/* ---------- marquee ---------- */
-.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2);overflow:hidden;padding:17px 0;position:relative;z-index:1}
-.mq-track{display:flex;gap:54px;width:max-content;animation:mq 30s linear infinite}
-.mq-track span{font-family:var(--font-m);font-size:.82rem;color:var(--dim);white-space:nowrap;display:flex;align-items:center;gap:54px}
-.mq-track span::after{content:'◆';color:var(--acc);font-size:.6rem}
-@keyframes mq{to{transform:translateX(-50%)}}
-
-/* ---------- scope wave divider ---------- */
-.scope{position:relative;z-index:1;overflow:hidden;background:var(--bg2);border-bottom:1px solid var(--line)}
-.scope svg{display:block;width:200%;height:64px;animation:wavemove 7s linear infinite}
-@keyframes wavemove{to{transform:translateX(-50%)}}
-.scope path{fill:none;stroke:var(--acc);stroke-width:1.6;opacity:.6;filter:drop-shadow(0 0 5px rgba(74,216,255,.7))}
-
-/* ---------- sections ---------- */
-.wrap{max-width:1200px;margin:0 auto;padding:clamp(80px,11vh,130px) clamp(20px,5vw,64px) 0}
-.sec-tag{font-family:var(--font-m);font-size:.78rem;color:var(--acc);letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:12px}
-.sec-tag::before{content:'';width:34px;height:1.5px;background:var(--acc)}
-h2{font-family:var(--font-d);font-size:clamp(1.9rem,4vw,2.9rem);font-weight:700;letter-spacing:-.02em;margin-bottom:18px}
-.sec-sub{color:var(--muted);max-width:640px;margin-bottom:54px}
-
-/* reveal + 3D scroll rotation */
-.rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
-.rv.in{opacity:1;transform:none}
-.persp{perspective:1100px}
-.r3d{will-change:transform,opacity;transform-style:preserve-3d}
-
-/* ---------- about ---------- */
-.about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
-.about-grid p{color:var(--muted);margin-bottom:18px;font-size:1.01rem}
-.about-grid p b{color:var(--txt);font-weight:600}
-.term{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5)}
-.term-bar{display:flex;align-items:center;gap:7px;padding:12px 16px;background:var(--card2);border-bottom:1px solid var(--line)}
-.term-bar i{width:11px;height:11px;border-radius:50%;display:block}
-.term-bar i:nth-child(1){background:#ff5f57}.term-bar i:nth-child(2){background:#febc2e}.term-bar i:nth-child(3){background:#28c840}
-.term-bar span{font-family:var(--font-m);font-size:.72rem;color:var(--dim);margin-left:8px}
-.term-body{padding:22px 22px 26px;font-family:var(--font-m);font-size:.8rem;line-height:2.05}
-.term-body .c{color:var(--dim)}
-.term-body .k{color:var(--acc)}
-.term-body .v{color:var(--txt)}
-.term-body .g{color:var(--acc2)}
-.term-body .ok{color:var(--acc2);font-weight:700}
-
-/* ---------- skills ---------- */
-.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.skill-card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:30px 26px;transition:border-color .3s;position:relative;overflow:hidden}
-.skill-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--grad);opacity:0;transition:.3s}
-.skill-card:hover{border-color:var(--line2)}
-.skill-card:hover::before{opacity:1}
-.skill-ico{width:46px;height:46px;border-radius:10px;background:var(--acc-dim);border:1px solid rgba(74,216,255,.3);
-  display:flex;align-items:center;justify-content:center;margin-bottom:20px}
-.skill-ico svg{width:22px;height:22px;stroke:var(--acc);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.skill-card h3{font-family:var(--font-d);font-size:1.12rem;margin-bottom:14px}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{font-family:var(--font-m);font-size:.74rem;color:var(--muted);border:1px solid var(--line2);background:var(--bg2);padding:5px 11px;border-radius:6px;transition:.2s}
-.chip:hover{color:var(--acc);border-color:rgba(74,216,255,.45)}
-
-/* ---------- projects ---------- */
-.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
-.proj{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:border-color .35s,box-shadow .35s;display:flex;flex-direction:column}
-.proj:hover{border-color:rgba(74,216,255,.4);box-shadow:0 24px 60px rgba(0,0,0,.45),0 0 40px rgba(74,216,255,.07)}
-.proj-img{position:relative;height:250px;overflow:hidden}
-.proj-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;filter:saturate(.95)}
-.proj:hover .proj-img img{transform:scale(1.06)}
-.proj-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(5,8,13,.92))}
-.scanline{position:absolute;left:0;right:0;top:-10%;height:3px;z-index:3;opacity:0;
-  background:linear-gradient(90deg,transparent,var(--acc),transparent);box-shadow:0 0 18px rgba(74,216,255,.8)}
-.proj:hover .scanline{opacity:1;animation:scan 1.6s ease-in-out infinite}
-@keyframes scan{0%{top:-2%}50%{top:100%}100%{top:-2%}}
-.proj-date{position:absolute;top:16px;left:16px;z-index:2;font-family:var(--font-m);font-size:.72rem;color:var(--txt);
-  background:rgba(5,8,13,.75);backdrop-filter:blur(6px);border:1px solid var(--line2);padding:5px 12px;border-radius:99px}
-.proj-body{padding:26px;display:flex;flex-direction:column;gap:14px;flex:1}
-.proj-body h3{font-family:var(--font-d);font-size:1.3rem}
-.proj-body p{color:var(--muted);font-size:.93rem;flex:1}
-.proj-body p b{color:var(--txt)}
-.proj-tags{display:flex;flex-wrap:wrap;gap:8px}
-.tag{font-family:var(--font-m);font-size:.71rem;color:var(--acc);background:var(--acc-dim);border:1px solid rgba(74,216,255,.25);padding:4px 11px;border-radius:6px}
-
-/* ---------- experience ---------- */
-.timeline{position:relative;max-width:860px}
-.timeline::before{content:'';position:absolute;left:7px;top:6px;bottom:6px;width:1.5px;background:linear-gradient(180deg,var(--acc),var(--line) 70%)}
-.titem{position:relative;padding:0 0 52px 46px}
-.titem:last-child{padding-bottom:0}
-.titem::before{content:'';position:absolute;left:0;top:6px;width:15px;height:15px;border-radius:50%;
-  background:var(--bg);border:2px solid var(--acc);box-shadow:0 0 16px rgba(74,216,255,.5)}
-.t-date{font-family:var(--font-m);font-size:.76rem;color:var(--acc);margin-bottom:8px;letter-spacing:.05em}
-.titem h3{font-family:var(--font-d);font-size:1.3rem;margin-bottom:3px}
-.t-co{color:var(--muted);font-size:.92rem;margin-bottom:16px}
-.t-co b{color:var(--acc2);font-weight:600}
-.titem ul{list-style:none;display:flex;flex-direction:column;gap:10px}
-.titem li{color:var(--muted);font-size:.94rem;padding-left:22px;position:relative}
-.titem li::before{content:'▹';position:absolute;left:0;color:var(--acc)}
-.titem li b{color:var(--txt);font-weight:600}
-
-/* ---------- education ---------- */
-.edu{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:38px;display:flex;gap:28px;align-items:flex-start;max-width:860px}
-.edu-ico{width:56px;height:56px;flex-shrink:0;border-radius:12px;background:var(--acc-dim);border:1px solid rgba(74,216,255,.3);display:flex;align-items:center;justify-content:center}
-.edu-ico svg{width:26px;height:26px;stroke:var(--acc);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.edu h3{font-family:var(--font-d);font-size:1.35rem;margin-bottom:4px}
-.edu .deg{color:var(--acc);font-size:.95rem;margin-bottom:10px}
-.edu p{color:var(--muted);font-size:.93rem}
-
-/* ---------- contact ---------- */
-#contact .wrap{padding-bottom:0}
-.contact-box{background:linear-gradient(160deg,var(--card) 0%,var(--bg2) 100%);border:1px solid var(--line);border-radius:18px;
-  padding:clamp(40px,7vw,80px);text-align:center;position:relative;overflow:hidden}
-.contact-box::before{content:'';position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:480px;height:240px;
-  background:radial-gradient(ellipse,rgba(74,216,255,.14),transparent 70%);pointer-events:none}
-.contact-box h2{margin-bottom:14px}
-.contact-box>p{color:var(--muted);max-width:520px;margin:0 auto 36px}
-.contact-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:34px}
-.clink{font-family:var(--font-m);font-size:.82rem;color:var(--muted);border:1px solid var(--line2);padding:10px 18px;border-radius:8px;transition:.2s;display:inline-flex;align-items:center;gap:8px}
-.clink:hover{color:var(--acc);border-color:rgba(74,216,255,.45);transform:translateY(-2px)}
-footer{text-align:center;padding:46px 20px 36px;color:var(--dim);font-size:.82rem;font-family:var(--font-m)}
-footer span{color:var(--acc)}
-.bands{display:inline-flex;gap:3px;vertical-align:middle;margin:0 8px}
-.bands i{width:5px;height:14px;border-radius:1px}
-
-/* ---------- responsive ---------- */
-@media(max-width:980px){
-  .hero-inner{grid-template-columns:1fr;gap:44px}
-  .chip-scene{min-height:320px}
-  .about-grid{grid-template-columns:1fr}
-  .skills-grid{grid-template-columns:1fr 1fr}
-  .proj-grid{grid-template-columns:1fr}
-}
-@media(max-width:680px){
-  .nav-links{position:fixed;inset:0;background:rgba(5,8,13,.97);backdrop-filter:blur(16px);flex-direction:column;justify-content:center;
-    gap:34px;transform:translateX(100%);transition:.35s}
-  .nav-links.open{transform:none}
-  .nav-links a{font-size:1.2rem}
-  #burger{display:block}
-  .skills-grid{grid-template-columns:1fr}
-  .edu{flex-direction:column}
-  .stats{gap:24px}
-  .orbit.o2{display:none}
-}
-@media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
-  html{scroll-behavior:auto}
-  #boot{display:none}
-}
+:root{--bg:#0b0d10;--bg-2:#101317;--surface:#14181d;--surface-2:#1a1f26;--line:#242a32;--line-2:#2f3742;--text:#e9ecef;--text-2:#aab3bd;--text-3:#808b98;--accent:#f0b64a;--accent-2:#ffd58a;--accent-ink:#1a1204;--ok:#5ad39a;--font-sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--font-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;--radius:6px;--radius-lg:10px;--topbar:52px;--dock:44px;--ease:cubic-bezier(.2,.7,.2,1);--ease-out:cubic-bezier(.16,1,.3,1);--shadow:0 20px 60px rgba(0,0,0,.55),0 2px 8px rgba(0,0,0,.4);--maxw:1200px;color-scheme:dark}*{box-sizing:border-box}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}body.no-scroll{overflow:hidden}a{color:inherit}img{max-width:100%;display:block}button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}h1,h2,h3,h4{margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.15}p{margin:0 0 1em}:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.skip{position:absolute;left:12px;top:-60px;z-index:1000;background:var(--accent);color:var(--accent-ink);padding:10px 14px;border-radius:var(--radius);font-weight:600}.skip:focus{top:12px}::selection{background:var(--accent);color:var(--accent-ink)}.mono{font-family:var(--font-mono)}.eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:500}.muted{color:var(--text-2)}.dim{color:var(--text-3)}#bg{position:fixed;inset:0;z-index:0;pointer-events:none}#bg canvas{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity 1.2s ease}#bg.ready canvas{opacity:1}#bg::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:40px 40px}#bg::after{content:"";position:absolute;inset:0;background:radial-gradient(1200px 700px at 70% -10%,rgba(240,182,74,.06),transparent 60%),linear-gradient(to bottom,rgba(11,13,16,0) 0,rgba(11,13,16,.6) 70%,var(--bg) 100%)}.topbar{position:fixed;top:0;left:0;right:0;height:var(--topbar);z-index:500;display:flex;align-items:center;gap:8px;padding:0 16px;background:rgba(11,13,16,.78);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--font-mono);font-size:13px;letter-spacing:.02em;margin-right:8px;white-space:nowrap}.brand .led{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 3px rgba(90,211,154,.18);flex:none}.brand b{font-weight:600}.brand span{color:var(--text-3)}.nav{display:flex;gap:2px;margin-left:8px}.nav a{position:relative;text-decoration:none;font-size:13.5px;padding:8px 10px;color:var(--text-2);border-radius:var(--radius);transition:color .2s var(--ease),background .2s var(--ease)}.nav a:hover,.nav a[aria-current="true"]{color:var(--text);background:rgba(255,255,255,.04)}.nav a::after{content:"";position:absolute;left:10px;right:10px;bottom:4px;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease-out);border-radius:2px}.nav a[aria-current="true"]::after{transform:scaleX(1)}.topbar .spacer{flex:1}.status{display:flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:11.5px;color:var(--text-2);white-space:nowrap}.status .blink{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:blink 2.2s infinite}@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}.clock{font-family:var(--font-mono);font-size:11.5px;color:var(--text-3);white-space:nowrap}.menu-btn{display:none;width:40px;height:40px;border-radius:var(--radius);align-items:center;justify-content:center;border:1px solid var(--line)}.menu-btn svg{width:18px;height:18px}@media (max-width:900px){.topbar{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(11,13,16,.96)}.nav{display:none}.status{display:none}.clock{display:none}.menu-btn{display:inline-flex}.topbar .spacer{flex:1}}.mnav{position:fixed;inset:var(--topbar) 0 0 0;z-index:499;background:rgba(11,13,16,.96);backdrop-filter:blur(10px);padding:20px 16px;display:none;flex-direction:column;gap:4px}.mnav.open{display:flex}.mnav a{text-decoration:none;font-size:20px;padding:14px 12px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;color:var(--text)}.mnav a small{font-family:var(--font-mono);color:var(--text-3);font-size:12px}.mnav .mstatus{margin-top:auto;font-family:var(--font-mono);font-size:12px;color:var(--text-2)}main{position:relative;z-index:1}.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}@media (max-width:640px){.wrap{padding:0 16px}}section.block{padding:96px 0}@media (max-width:768px){section.block{padding:64px 0}}.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:40px;flex-wrap:wrap}.sec-head h2{font-size:clamp(28px,4vw,42px);letter-spacing:-.02em;margin-top:8px}.sec-head .lede{color:var(--text-2);max-width:56ch;margin:10px 0 0}.open-win{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:12px;letter-spacing:.04em;border:1px solid var(--line-2);border-radius:var(--radius);padding:8px 12px;color:var(--text-2);transition:border-color .2s,color .2s,background .2s;white-space:nowrap}.open-win:hover{border-color:var(--accent);color:var(--text);background:rgba(240,182,74,.06)}.open-win svg{width:14px;height:14px}.hero{min-height:calc(100vh - var(--topbar));display:flex;align-items:center;padding:calc(var(--topbar) + 56px) 0 64px}.hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(320px,.9fr);gap:56px;align-items:center}@media (max-width:980px){.hero-grid{grid-template-columns:1fr;gap:40px}}.hero h1{font-size:clamp(40px,5.6vw,72px);letter-spacing:-.035em;line-height:1.02;margin:16px 0 20px;font-weight:650}.hero h1 .ln{display:block;overflow:hidden}.hero h1 .ln span{display:inline-block}.hero h1 em{font-style:normal;color:var(--accent)}.hero .sub{font-size:clamp(17px,1.6vw,20px);color:var(--text-2);max-width:60ch;margin-bottom:28px}.hero .sub b{color:var(--text);font-weight:600}.cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}.btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:var(--radius);font-weight:600;font-size:14.5px;text-decoration:none;border:1px solid var(--line-2);color:var(--text);transition:transform .25s var(--ease-out),background .2s,border-color .2s,box-shadow .2s;will-change:transform}.btn:hover{transform:translateY(-2px);border-color:var(--text-3)}.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}.btn.primary:hover{background:var(--accent-2);box-shadow:0 8px 24px rgba(240,182,74,.25)}.btn svg{width:16px;height:16px}.btn .k{font-family:var(--font-mono);font-size:11px;opacity:.65;border:1px solid currentColor;border-radius:3px;padding:0 5px;margin-left:2px}.datasheet{border:1px solid var(--line-2);border-radius:var(--radius-lg);background:linear-gradient(180deg,rgba(26,31,38,.9),rgba(20,24,29,.9));box-shadow:var(--shadow);overflow:hidden;position:relative}.datasheet::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:24px 24px;opacity:.25;pointer-events:none}.ds-head{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--line);font-family:var(--font-mono);font-size:11.5px;color:var(--text-2);position:relative}.ds-head .dots{display:flex;gap:6px}.ds-head .dots i{width:9px;height:9px;border-radius:50%;background:var(--line-2);display:block}.ds-body{position:relative;padding:8px 0}.ds-row{display:grid;grid-template-columns:118px 1fr;gap:12px;padding:11px 16px;border-bottom:1px dashed var(--line);align-items:baseline}.ds-row:last-child{border-bottom:0}.ds-row .k{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}.ds-row .v{font-size:14.5px;line-height:1.45}.ds-row .v a{color:var(--text);text-decoration:none;border-bottom:1px solid var(--line-2)}.ds-row .v a:hover{border-color:var(--accent)}.ds-row .v .tag{display:inline-block;font-family:var(--font-mono);font-size:11.5px;padding:2px 7px;border:1px solid var(--line-2);border-radius:4px;margin:2px 4px 2px 0;color:var(--text-2)}.ds-foot{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:12px 16px;border-top:1px solid var(--line);font-family:var(--font-mono);font-size:11px;color:var(--text-3);position:relative;flex-wrap:wrap}.ds-foot b{color:var(--text);font-weight:600;font-size:15px;display:block;letter-spacing:-.01em}@media (max-width:480px){.ds-row{grid-template-columns:1fr;gap:4px}.ds-foot{grid-template-columns:1fr 1fr}}.scroll-hint{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);font-family:var(--font-mono);font-size:11px;color:var(--text-3);display:flex;flex-direction:column;align-items:center;gap:8px;letter-spacing:.1em}.scroll-hint i{width:1px;height:36px;background:linear-gradient(var(--accent),transparent);display:block;animation:drop 1.8s var(--ease) infinite}@keyframes drop{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}@media (max-width:980px){.scroll-hint{display:none}}.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease-out),transform .7s var(--ease-out)}.reveal.in{opacity:1;transform:none}.reveal[data-delay="1"]{transition-delay:.08s}.reveal[data-delay="2"]{transition-delay:.16s}.reveal[data-delay="3"]{transition-delay:.24s}.reveal[data-delay="4"]{transition-delay:.32s}@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.hero h1 .ln span{transform:none!important}*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}.projects{display:grid;gap:18px}.proj{border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--surface);overflow:hidden;transition:border-color .25s,transform .35s var(--ease-out);position:relative}.proj:hover{border-color:var(--line-2)}.proj-sum{display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:center;padding:22px 24px;width:100%;text-align:left}.proj-sum:hover .proj-title{color:var(--accent-2)}.proj-idx{font-family:var(--font-mono);font-size:12px;color:var(--text-3);letter-spacing:.1em}.proj-idx b{display:block;font-size:22px;color:var(--text);font-weight:500;letter-spacing:0}.proj-title{font-size:clamp(19px,2.2vw,24px);letter-spacing:-.015em;transition:color .2s}.proj-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;font-family:var(--font-mono);font-size:11.5px;color:var(--text-2)}.proj-meta span::before{content:"·";margin-right:10px;color:var(--text-3)}.proj-meta span:first-child::before{content:none}.proj-ctl{display:flex;align-items:center;gap:10px}.chev{width:34px;height:34px;border:1px solid var(--line-2);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;transition:transform .35s var(--ease-out),border-color .2s,background .2s;flex:none}.chev svg{width:14px;height:14px}.proj.open .chev{transform:rotate(180deg);border-color:var(--accent);background:rgba(240,182,74,.1)}.proj-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s var(--ease-out)}.proj.open .proj-body{grid-template-rows:1fr}.proj-body>div{overflow:hidden;min-height:0}.proj-inner{padding:0 24px 28px;border-top:1px solid var(--line)}.case{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:36px;padding-top:26px;align-items:start}@media (max-width:860px){.case{grid-template-columns:1fr;gap:24px}.case .viz{order:-1;position:static}.proj-sum{grid-template-columns:1fr auto;gap:12px}.proj-idx{display:none}}.qa{display:grid;gap:18px}.qa dt{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}.qa dd{margin:0;color:var(--text-2);font-size:15px}.qa dd b{color:var(--text);font-weight:600}.qa dd ul{margin:6px 0 0;padding-left:18px}.qa dd li{margin-bottom:4px}.tech{display:flex;flex-wrap:wrap;gap:6px}.tech button,.tech span{font-family:var(--font-mono);font-size:11.5px;padding:4px 9px;border:1px solid var(--line-2);border-radius:4px;color:var(--text-2);transition:border-color .2s,color .2s}.tech button:hover{border-color:var(--accent);color:var(--text)}.viz{border:1px solid var(--line);border-radius:var(--radius);background:var(--bg-2);overflow:hidden;position:sticky;top:calc(var(--topbar) + 16px)}.viz figure{margin:0}.viz figcaption{font-family:var(--font-mono);font-size:11px;color:var(--text-3);padding:10px 14px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}.viz svg{width:100%;height:auto;display:block}.viz .photo{aspect-ratio:21/9;background:var(--surface-2);object-fit:cover;width:100%;filter:saturate(.8) contrast(1.05);opacity:.9}.viz .stack{display:grid}.viz .stack>*{grid-area:1/1}.viz .grad{background:linear-gradient(to top,var(--bg-2) 0,transparent 60%)}.result-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-top:22px}.result-strip div{border:1px solid var(--line);border-radius:var(--radius);padding:12px 14px;background:var(--bg-2)}.result-strip b{display:block;font-size:20px;letter-spacing:-.02em;font-weight:600}.result-strip small{font-family:var(--font-mono);font-size:11px;color:var(--text-3);letter-spacing:.06em;text-transform:uppercase}.adder{padding:16px 14px 6px;font-family:var(--font-mono)}.adder .bits{display:flex;gap:6px;align-items:center;margin-bottom:8px;font-size:12px}.adder .bits label{width:26px;color:var(--text-3)}.bit{width:34px;height:30px;border:1px solid var(--line-2);border-radius:4px;font-family:var(--font-mono);font-size:14px;color:var(--text-2);transition:background .15s,color .15s,border-color .15s}.bit[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:600}.adder .sum{margin-top:8px;font-size:12px;color:var(--text-2)}.adder .sum b{color:var(--text);font-weight:600;font-size:14px}.adder .eq{color:var(--text-3);font-size:11.5px;margin-top:4px}.fa-svg{margin-top:10px}.fa-svg .wire{stroke:var(--line-2);stroke-width:1.5;fill:none}.fa-svg .wire.hi{stroke:var(--accent);stroke-width:2.2}.fa-svg .box{fill:var(--surface-2);stroke:var(--line-2)}.fa-svg text{fill:var(--text-2);font-size:9px;font-family:var(--font-mono)}.fa-svg .lbl{fill:var(--text-3)}.fa-svg .out{fill:var(--text);font-size:11px;font-weight:600}.fa-svg .out.hi{fill:var(--accent)}.pcb-svg .pad{fill:#3a2a12;stroke:var(--accent);stroke-width:.8}.pcb-svg .trace{stroke:#3b4652;stroke-width:1.6;fill:none;stroke-linecap:round}.pcb-svg .trace.sig{stroke:var(--accent);stroke-dasharray:6 200;animation:flow 3.2s linear infinite}.pcb-svg .comp{fill:var(--surface-2);stroke:var(--line-2)}.pcb-svg .comp:hover{stroke:var(--accent);cursor:help}.pcb-svg text{font-family:var(--font-mono);font-size:8px;fill:var(--text-3)}.pcb-svg .probe{transform-origin:center;animation:probe 4s var(--ease) infinite}@keyframes flow{to{stroke-dashoffset:-206}}@keyframes probe{0%,100%{transform:translate(0,0)}25%{transform:translate(-40px,10px)}50%{transform:translate(-90px,-4px)}75%{transform:translate(-30px,-18px)}}.dia text{font-family:var(--font-mono);font-size:9.5px;fill:var(--text-2)}.dia .t{fill:var(--text);font-size:10.5px;font-weight:600}.dia .box{fill:var(--surface-2);stroke:var(--line-2);stroke-width:1}.dia .box.acc{stroke:var(--accent)}.dia .w{stroke:var(--line-2);stroke-width:1.4;fill:none}.dia .w.sig{stroke:var(--accent);stroke-dasharray:5 140;animation:flow2 2.8s linear infinite}.dia .w.sig.d2{animation-delay:-.9s}.dia .w.sig.d3{animation-delay:-1.8s}.dia .arrow{fill:var(--line-2)}.dia .dim{fill:var(--text-3);font-size:8.5px}@keyframes flow2{to{stroke-dashoffset:-145}}.timeline{position:relative;display:grid;gap:36px}.timeline::before{content:"";position:absolute;left:11px;top:8px;bottom:8px;width:1px;background:var(--line-2)}.tl-item{position:relative;padding-left:44px}.tl-item::before{content:"";position:absolute;left:6px;top:8px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--accent);box-shadow:0 0 0 4px var(--bg)}.tl-date{font-family:var(--font-mono);font-size:12px;color:var(--accent);letter-spacing:.06em}.tl-item h3{font-size:clamp(20px,2.4vw,26px);margin-top:6px;letter-spacing:-.015em}.tl-org{color:var(--text-2);margin-top:4px;font-size:15px}.tl-org b{color:var(--text);font-weight:600}.casestudy{margin-top:22px;border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--surface);overflow:hidden}.cs-viz{border-bottom:1px solid var(--line);background:var(--bg-2)}.cs-viz svg{display:block;width:100%;height:auto}.cs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}.cs-grid>div{padding:20px 22px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.cs-grid>div:nth-child(3n){border-right:0}.cs-grid>div:nth-last-child(-n+3){border-bottom:0}.cs-grid h4{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;font-weight:500}.cs-grid p,.cs-grid li{font-size:14.5px;color:var(--text-2);margin:0}.cs-grid ul{margin:0;padding-left:16px}.cs-grid li{margin-bottom:6px}.cs-grid b{color:var(--text);font-weight:600}.cs-grid .big{font-size:28px;letter-spacing:-.02em;color:var(--text);font-weight:600;display:block;line-height:1.1;margin-bottom:4px}@media (max-width:860px){.cs-grid{grid-template-columns:1fr 1fr}.cs-grid>div:nth-child(3n){border-right:1px solid var(--line)}.cs-grid>div:nth-child(2n){border-right:0}.cs-grid>div:nth-last-child(-n+3){border-bottom:1px solid var(--line)}.cs-grid>div:nth-last-child(-n+2){border-bottom:0}}@media (max-width:540px){.cs-grid{grid-template-columns:1fr}.cs-grid>div{border-right:0!important;border-bottom:1px solid var(--line)!important}.cs-grid>div:last-child{border-bottom:0!important}}.bullets{margin:14px 0 0;padding-left:18px;color:var(--text-2);font-size:15px}.bullets li{margin-bottom:8px}.bullets b{color:var(--text);font-weight:600}.sky-svg .rail{stroke:var(--accent);stroke-width:2.5;fill:none}.sky-svg .rail.ghost{stroke:var(--line-2);stroke-width:1;stroke-dasharray:3 4}.sky-svg .stn{fill:var(--bg);stroke:var(--accent);stroke-width:1.5}.sky-svg text{font-family:var(--font-mono);font-size:9px;fill:var(--text-3)}.sky-svg .t{fill:var(--text);font-size:10px}.sky-svg .tr{animation:train 9s linear infinite}@keyframes train{from{offset-distance:0}to{offset-distance:100%}}.sky-svg .lay{fill:none;stroke:var(--line-2);stroke-width:1}.sky-svg .lay.hl{stroke:var(--text-2)}.skills-layout{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(300px,.8fr);gap:28px;align-items:start}@media (max-width:900px){.skills-layout{grid-template-columns:1fr}}.skill-group{margin-bottom:26px}.skill-group h3{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);font-weight:500;margin-bottom:12px;display:flex;align-items:center;gap:10px}.skill-group h3::after{content:"";flex:1;height:1px;background:var(--line)}.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{display:inline-flex;align-items:center;gap:8px;padding:9px 13px;border:1px solid var(--line-2);border-radius:var(--radius);font-size:14px;background:var(--surface);transition:border-color .2s,transform .25s var(--ease-out),background .2s;will-change:transform}.chip:hover{border-color:var(--text-3);transform:translateY(-2px)}.chip[aria-pressed="true"]{border-color:var(--accent);background:rgba(240,182,74,.1);color:var(--text)}.chip .n{font-family:var(--font-mono);font-size:10.5px;color:var(--text-3);border:1px solid var(--line);border-radius:3px;padding:0 5px}.chip[aria-pressed="true"] .n{color:var(--accent);border-color:var(--accent)}.skill-panel{position:sticky;top:calc(var(--topbar) + 20px);border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--surface);overflow:hidden}.sp-head{padding:14px 18px;border-bottom:1px solid var(--line);font-family:var(--font-mono);font-size:11.5px;color:var(--text-2);display:flex;justify-content:space-between;align-items:center}.sp-body{padding:18px}.sp-body h3{font-size:22px;letter-spacing:-.02em;margin-bottom:6px}.sp-body .lvl{font-family:var(--font-mono);font-size:11.5px;color:var(--text-3);margin-bottom:16px}.sp-list{display:grid;gap:8px}.sp-list button{display:grid;grid-template-columns:1fr auto;gap:10px;text-align:left;border:1px solid var(--line);border-radius:var(--radius);padding:11px 13px;background:var(--bg-2);transition:border-color .2s,background .2s}.sp-list button:hover{border-color:var(--accent);background:rgba(240,182,74,.06)}.sp-list .w{font-size:14px;font-weight:600;display:block}.sp-list .h{font-size:12.5px;color:var(--text-2);margin-top:2px;display:block}.sp-list .arr{font-family:var(--font-mono);color:var(--text-3);font-size:12px;align-self:center}.sp-empty{color:var(--text-2);font-size:14.5px}.sp-empty kbd{font-family:var(--font-mono);border:1px solid var(--line-2);padding:1px 6px;border-radius:3px;font-size:12px}@media (max-width:900px){.skill-panel{position:static}}.two{display:grid;grid-template-columns:1fr 1fr;gap:22px}@media (max-width:800px){.two{grid-template-columns:1fr}}.card{border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--surface);padding:26px}.card h3{font-size:22px;letter-spacing:-.02em}.card .sub{color:var(--text-2);margin-top:6px;font-size:15px}.kv{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;margin-top:18px;font-size:14.5px}.kv dt{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);padding-top:3px}.kv dd{margin:0;color:var(--text-2)}.courses{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}.courses span{font-family:var(--font-mono);font-size:11.5px;padding:4px 8px;border:1px solid var(--line-2);border-radius:4px;color:var(--text-2)}.resume-card{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center}@media (max-width:640px){.resume-card{grid-template-columns:1fr}}.doc{width:96px;height:124px;border:1px solid var(--line-2);border-radius:4px;background:var(--bg-2);position:relative;overflow:hidden;flex:none}.doc i{position:absolute;left:12px;right:12px;height:3px;background:var(--line-2);border-radius:2px}.doc i:nth-child(1){top:16px;width:40px;background:var(--accent)}.doc i:nth-child(2){top:28px}.doc i:nth-child(3){top:36px;right:30px}.doc i:nth-child(4){top:52px}.doc i:nth-child(5){top:60px;right:24px}.doc i:nth-child(6){top:68px;right:40px}.doc i:nth-child(7){top:84px}.doc i:nth-child(8){top:92px;right:36px}.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:26px}.clink{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;background:var(--surface);text-decoration:none;transition:border-color .2s,transform .25s var(--ease-out);will-change:transform}.clink:hover{border-color:var(--accent);transform:translateY(-2px)}.clink .l{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);display:block;margin-bottom:4px}.clink .v{font-size:15px;font-weight:500;word-break:break-all}.clink svg{width:16px;height:16px;flex:none;color:var(--text-3)}.copy{font-family:var(--font-mono);font-size:11px;border:1px solid var(--line-2);border-radius:4px;padding:4px 8px;color:var(--text-2)}.copy:hover{border-color:var(--accent);color:var(--text)}footer{position:relative;z-index:1;border-top:1px solid var(--line);padding:28px 0 calc(28px + var(--dock));font-family:var(--font-mono);font-size:12px;color:var(--text-2)}footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}#windows{position:fixed;inset:0;z-index:600;pointer-events:none}.win{position:absolute;pointer-events:auto;display:flex;flex-direction:column;width:min(920px,calc(100vw - 32px));height:min(680px,calc(100vh - var(--topbar) - var(--dock) - 24px));background:var(--surface);border:1px solid var(--line-2);border-radius:var(--radius-lg);box-shadow:var(--shadow);overflow:hidden;transform-origin:center;will-change:transform,opacity}.win.focus{border-color:#3d4855}.win.minimized{display:none}.win.max{left:8px!important;top:calc(var(--topbar) + 8px)!important;width:calc(100vw - 16px)!important;height:calc(100vh - var(--topbar) - var(--dock) - 16px)!important}.win-bar{display:flex;align-items:center;gap:10px;height:40px;padding:0 8px 0 12px;border-bottom:1px solid var(--line);background:var(--surface-2);cursor:grab;user-select:none;touch-action:none;flex:none}.win-bar:active{cursor:grabbing}.win-bar .t{font-family:var(--font-mono);font-size:12px;color:var(--text-2);flex:1;display:flex;align-items:center;gap:8px;min-width:0}.win-bar .t b{color:var(--text);font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.win-bar .t i{width:7px;height:7px;border-radius:50%;background:var(--accent);flex:none}.wbtn{width:30px;height:30px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;color:var(--text-2);transition:background .15s,color .15s}.wbtn:hover{background:rgba(255,255,255,.08);color:var(--text)}.wbtn.close:hover{background:#c0392b;color:#fff}.wbtn svg{width:13px;height:13px}.win-body{flex:1;overflow:auto;padding:26px 28px 34px;overscroll-behavior:contain}.win-body .sec-head{margin-bottom:24px}.win-body .open-win{display:none}.win-body .viz{position:static}.win-body .skill-panel{position:static}@media (max-width:768px){.win{left:0!important;top:var(--topbar)!important;width:100vw!important;height:calc(100vh - var(--topbar) - var(--dock))!important;height:calc(100dvh - var(--topbar) - var(--dock))!important;border-radius:0;border-left:0;border-right:0}.win-bar{cursor:default}.win-body{padding:20px 16px 30px}.wbtn.max-btn,.wbtn.min-btn{display:none}}.dock{position:fixed;left:0;right:0;bottom:0;height:var(--dock);z-index:610;display:flex;align-items:center;gap:6px;padding:0 10px;background:rgba(11,13,16,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--line);transform:translateY(100%);transition:transform .35s var(--ease-out);overflow-x:auto;scrollbar-width:none}.dock.show{transform:none}.dock .dl{font-family:var(--font-mono);font-size:10.5px;color:var(--text-3);letter-spacing:.1em;margin-right:6px;white-space:nowrap}.dtab{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:12px;padding:6px 10px;border:1px solid var(--line-2);border-radius:5px;color:var(--text-2);white-space:nowrap;background:var(--surface)}.dtab.active{border-color:var(--accent);color:var(--text)}.dtab i{width:6px;height:6px;border-radius:50%;background:var(--text-3)}.dtab.active i{background:var(--accent)}.dtab.min i{background:transparent;border:1px solid var(--text-3)}.dock .dclose{margin-left:auto;font-family:var(--font-mono);font-size:11px;color:var(--text-3);white-space:nowrap;padding:6px 8px}.dock .dclose:hover{color:var(--text)}.cursor{position:fixed;left:0;top:0;width:28px;height:28px;border:1px solid rgba(240,182,74,.7);border-radius:50%;pointer-events:none;z-index:1000;transform:translate(-50%,-50%);opacity:0;transition:width .25s var(--ease-out),height .25s var(--ease-out),opacity .3s,background .2s;will-change:transform}.cursor::after{content:"";position:absolute;left:50%;top:50%;width:3px;height:3px;background:var(--accent);border-radius:50%;transform:translate(-50%,-50%)}.cursor.on{opacity:1}.cursor.hover{width:44px;height:44px;background:rgba(240,182,74,.12)}@media (hover:none),(pointer:coarse){.cursor{display:none}}@media (prefers-reduced-motion:reduce){.cursor{display:none}}.toast{position:fixed;left:50%;bottom:calc(var(--dock) + 16px);transform:translate(-50%,20px);opacity:0;background:var(--surface-2);border:1px solid var(--line-2);color:var(--text);padding:10px 14px;border-radius:var(--radius);font-family:var(--font-mono);font-size:12px;z-index:900;transition:opacity .25s,transform .25s var(--ease-out);pointer-events:none}.toast.show{opacity:1;transform:translate(-50%,0)}template{display:none}@media print{#bg,.topbar,.dock,.cursor,.open-win,.scroll-hint,#windows{display:none!important}body{background:#fff;color:#000}.proj-body{grid-template-rows:1fr!important}}@media (max-width:640px){.cs-viz{overflow-x:auto;-webkit-overflow-scrolling:touch}.cs-viz svg{min-width:680px}}.viz svg *,.cs-viz svg *{animation-play-state:paused}.viz.live svg *,.cs-viz.live svg *{animation-play-state:running}
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
+<div id="bg" aria-hidden="true"><canvas id="bgc"></canvas></div>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
 
-<!-- boot screen -->
-<div id="boot">
-  <div class="boot-box">
-    <div class="ln"><span class="dim">&gt;</span> MASTAAN_UPPAL.SYS <span class="dim">v3.0</span></div>
-    <div class="ln"><span class="dim">&gt;</span> initializing hardware<span class="dim">...</span> <span class="ok">OK</span></div>
-    <div class="ln"><span class="dim">&gt;</span> routing power to portfolio<span class="dim">...</span> <span class="ok">OK</span></div>
-    <div class="ln"><span class="dim">&gt;</span> <span class="ok">▶ SYSTEM ONLINE</span></div>
-    <div class="boot-bar"><i id="bootbar"></i></div>
-  </div>
-</div>
-
-<div id="progress"></div>
-<div id="hud"></div>
-
-<!-- power spine -->
-<div id="spine">
-  <div class="rail"></div>
-  <div class="lit" id="spineLit"></div>
-  <div id="comet"></div>
-</div>
-
-<nav id="nav">
-  <a class="logo" href="#hero">mastaan<span>.uppal</span><span style="color:var(--dim)"> /&gt;</span></a>
-  <div class="nav-links" id="navLinks">
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
+<header class="topbar">
+  <a class="brand" href="#top"><span class="led" aria-hidden="true"></span><b>mastaan.uppal</b><span>&nbsp;/ workstation</span></a>
+  <nav class="nav" aria-label="Primary">
     <a href="#projects">Projects</a>
     <a href="#experience">Experience</a>
-    <a href="#contact" class="nav-cta">Get in touch</a>
-  </div>
-  <button id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#resume">Résumé</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <span class="spacer"></span>
+  <span class="status"><i class="blink" aria-hidden="true"></i>OPEN TO INTERNSHIPS · SURREY, BC</span>
+  <span class="clock" id="clock" aria-hidden="true"></span>
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mnav">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+  </button>
+</header>
+<nav class="mnav" id="mnav" aria-label="Mobile">
+  <a href="#projects">Projects <small>01</small></a>
+  <a href="#experience">Experience <small>02</small></a>
+  <a href="#skills">Skills <small>03</small></a>
+  <a href="#education">Education <small>04</small></a>
+  <a href="#resume">Résumé <small>05</small></a>
+  <a href="#contact">Contact <small>06</small></a>
+  <span class="mstatus">● Open to internships · Surrey, BC</span>
 </nav>
 
-<!-- ================= HERO ================= -->
-<section id="hero" data-toast="⚡ POWER ON — SYSTEM ONLINE">
-  <div class="hero-inner">
+<main id="main">
+<!-- ============================ HERO ============================ -->
+<section class="hero" id="top" aria-labelledby="hero-h">
+  <div class="wrap hero-grid">
     <div>
-      <div class="badge"><span class="dot"></span>OPEN TO ELECTRONICS &amp; EMBEDDED INTERNSHIPS</div>
-      <h1>Engineering the <span class="grad">circuits</span> behind everything.</h1>
-      <div class="typed-row"><span class="pre">$ focus --on </span><span id="typed"></span><span class="caret"></span></div>
-      <p class="hero-sub">I'm <b>Mastaan Uppal</b> — an Electronics Engineering student at <b>Simon Fraser University</b> who designs, solders, tests, and ships real hardware. From a precision motorized grinder built from scratch to coordinating design on a <b>16&nbsp;km SkyTrain expansion</b>, I turn schematics into working systems.</p>
-      <div class="btn-row">
-        <a class="btn btn-p" href="#projects">View projects ↓</a>
-        <a class="btn btn-s" href="mailto:msu4@sfu.ca">msu4@sfu.ca</a>
-      </div>
-      <div class="stats">
-        <div class="stat"><div class="num"><span class="count" data-to="16">0</span><em>km</em></div><div class="lbl">SkyTrain expansion</div></div>
-        <div class="stat"><div class="num">$<span class="count" data-to="100">0</span><em>M+</em></div><div class="lbl">Contracts coordinated</div></div>
-        <div class="stat"><div class="num"><span class="count" data-to="5">0</span><em>+</em></div><div class="lbl">Languages</div></div>
-        <div class="stat"><div class="num"><span class="count" data-to="2">0</span></div><div class="lbl">Industry roles</div></div>
+      <p class="eyebrow reveal">Engineering Science · Electronics · Simon Fraser University</p>
+      <h1 id="hero-h">
+        <span class="ln"><span>Mastaan Uppal</span></span>
+        <span class="ln"><span>builds <em>hardware</em></span></span>
+        <span class="ln"><span>that actually runs.</span></span>
+      </h1>
+      <p class="sub reveal" data-delay="2">Second-year Engineering Science student focused on <b>electronics and embedded systems</b>. I assemble and validate PCBs, write VHDL for FPGAs, prototype motorized machines, and spent a co-op term coordinating design on a <b>16&nbsp;km SkyTrain expansion</b>. Looking for an internship where the electrons meet the code.</p>
+      <div class="cta-row reveal" data-delay="3">
+        <a class="btn primary" href="#projects">See the projects
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn" href="Mastaan_Uppal_Resume.pdf" download>Download résumé <span class="k">PDF</span></a>
+        <a class="btn" href="mailto:mastaanuppal@gmail.com">Email me</a>
       </div>
     </div>
-
-    <div class="chip-scene">
-      <div class="orbit o1"><span class="e"></span></div>
-      <div class="orbit o2"><span class="e"></span></div>
-      <div id="chip">
-        <div class="cedge t"></div><div class="cedge b"></div><div class="cedge l"></div><div class="cedge r"></div>
-        <div class="cface back"></div>
-        <div class="cface front">
-          <div class="pins pt"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-          <div class="pins pb"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-          <div class="pins pl"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-          <div class="pins pr"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-          <div class="die">MU</div>
-          <div class="chip-label">SFU-ENSC · EST.2024</div>
-        </div>
+    <aside class="datasheet reveal" data-delay="2" aria-label="Quick facts">
+      <div class="ds-head"><span>MU-01 · DATASHEET</span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+      <div class="ds-body">
+        <div class="ds-row"><span class="k">Who</span><span class="v">Mastaan Uppal — engineering student, Surrey, B.C.</span></div>
+        <div class="ds-row"><span class="k">Studying</span><span class="v">BASc Engineering Science (Electronics), SFU · 2024–present</span></div>
+        <div class="ds-row"><span class="k">Builds</span><span class="v">PCB assembly &amp; validation · VHDL on FPGA · motorized precision machine</span></div>
+        <div class="ds-row"><span class="k">Worked at</span><span class="v"><a href="#experience">Flatiron Dragados</a> (Field Engineer co-op, SkyTrain) · <a href="#experience">Autoship Systems</a> (Marine design)</span></div>
+        <div class="ds-row"><span class="k">Tools</span><span class="v"><span class="tag">C++</span><span class="tag">Python</span><span class="tag">VHDL</span><span class="tag">EAGLE</span><span class="tag">LTspice</span><span class="tag">AutoCAD</span><span class="tag">SolidWorks</span><span class="tag">Oscilloscope</span></span></div>
+        <div class="ds-row"><span class="k">Contact</span><span class="v"><a href="mailto:mastaanuppal@gmail.com">mastaanuppal@gmail.com</a> · <a href="https://www.linkedin.com/in/mastaan-uppal" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/mastaanuppal-dotcom" target="_blank" rel="noopener">GitHub</a></span></div>
       </div>
-      <div class="chip-caption">[ scroll to rotate · <b>MU-1 core</b> ]</div>
-    </div>
+      <div class="ds-foot">
+        <span><b>16 km</b>transit line coordinated</span>
+        <span><b>5 × $20M+</b>subcontracts tracked</span>
+        <span><b>2</b>industry roles</span>
+        <span><b>6</b>languages</span>
+      </div>
+    </aside>
   </div>
+  <div class="scroll-hint" aria-hidden="true">SCROLL<i></i></div>
 </section>
 
-<!-- ================= MARQUEE ================= -->
-<div class="marquee" aria-hidden="true">
-  <div class="mq-track" id="mq">
-    <span>EAGLE PCB</span><span>LTSpice</span><span>Arduino</span><span>SolidWorks</span><span>AutoCAD</span><span>Python</span><span>C++</span><span>MATLAB</span><span>Java</span><span>JavaScript</span><span>Oscilloscope</span><span>Bluebeam</span><span>Propeller Aero</span><span>SMT Soldering</span>
-  </div>
-</div>
-
-<!-- ================= ABOUT ================= -->
-<section id="about" data-toast="▦ MODULE LOADED: ABOUT.SYS">
+<!-- ============================ PROJECTS ============================ -->
+<section class="block" id="projects" aria-labelledby="projects-h" data-win-title="projects.log">
   <div class="wrap">
-    <div class="sec-tag rv">01 · About</div>
-    <h2 class="rv">Hands-on by default.</h2>
-    <div class="about-grid persp">
-      <div class="rv">
-        <p>I learn by building. In my first two years of engineering I've <b>designed and fabricated a motorized precision machine</b>, <b>assembled and validated PCBs</b> with through-hole and surface-mount soldering, and worked two industry roles — one in <b>naval architecture</b>, one on a <b>$4B+ transit megaproject</b>.</p>
-        <p>What ties it together: I like the layer where <b>electrons meet code</b>. Reading a schematic, probing a board with an oscilloscope, then writing the firmware that brings it to life — that full loop is where I do my best work.</p>
-        <p>I'm now aiming that energy at the <b>semiconductor and embedded systems industry</b> — the companies designing the silicon that everything else runs on.</p>
-      </div>
-      <div class="term r3d rv">
-        <div class="term-bar"><i></i><i></i><i></i><span>mastaan@sfu: ~/roadmap</span></div>
-        <div class="term-body">
-          <div><span class="c">$</span> <span class="g">whoami</span></div>
-          <div><span class="k">name:</span> <span class="v">"Mastaan Uppal"</span> · <span class="k">loc:</span> <span class="v">"Surrey, B.C."</span></div>
-          <div><span class="c">$</span> <span class="g">cat leveling_up.txt</span></div>
-          <div><span class="k">&gt;</span> <span class="v">digital logic &amp; computer architecture</span></div>
-          <div><span class="k">&gt;</span> <span class="v">embedded firmware in C/C++</span></div>
-          <div><span class="k">&gt;</span> <span class="v">PCB layout best practices (EAGLE)</span></div>
-          <div><span class="k">&gt;</span> <span class="v">circuit sim &amp; validation (LTSpice)</span></div>
-          <div><span class="c">$</span> <span class="g">./run --status</span></div>
-          <div><span class="ok">▶ all systems operational_</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= SKILLS ================= -->
-<section id="skills" data-toast="🔧 SKILLS MODULE LOADED">
-  <div class="wrap">
-    <div class="sec-tag rv">02 · Skills</div>
-    <h2 class="rv">The toolbox.</h2>
-    <p class="sec-sub rv">Hardware-first, software-fluent — and comfortable everywhere in between.</p>
-    <div class="skills-grid persp">
-      <div class="skill-card r3d rv">
-        <div class="skill-ico"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/><rect x="9" y="9" width="6" height="6"/></svg></div>
-        <h3>Hardware &amp; Electronics</h3>
-        <div class="chips">
-          <span class="chip">PCB Assembly</span><span class="chip">THT + SMT Soldering</span><span class="chip">Arduino</span><span class="chip">Microcontrollers</span><span class="chip">Schematic Reading</span><span class="chip">Oscilloscopes</span><span class="chip">Multimeters</span><span class="chip">DC Power Supplies</span><span class="chip">Firmware Validation</span>
-        </div>
-      </div>
-      <div class="skill-card r3d rv">
-        <div class="skill-ico"><svg viewBox="0 0 24 24"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13 5l-2 14"/></svg></div>
-        <h3>Programming</h3>
-        <div class="chips">
-          <span class="chip">Python</span><span class="chip">C++</span><span class="chip">Java</span><span class="chip">MATLAB</span><span class="chip">JavaScript</span><span class="chip">Unit Testing</span><span class="chip">Debugging</span><span class="chip">Excel Automation</span>
-        </div>
-      </div>
-      <div class="skill-card r3d rv">
-        <div class="skill-ico"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
-        <h3>Design &amp; CAD</h3>
-        <div class="chips">
-          <span class="chip">EAGLE PCB Design</span><span class="chip">LTSpice</span><span class="chip">SolidWorks</span><span class="chip">AutoCAD</span><span class="chip">Bluebeam</span><span class="chip">Propeller Aero</span><span class="chip">Technical Drawings</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= PROJECTS ================= -->
-<section id="projects" data-toast="📡 LOADING PROJECTS... DONE">
-  <div class="wrap">
-    <div class="sec-tag rv">03 · Projects</div>
-    <h2 class="rv">Built from scratch.</h2>
-    <p class="sec-sub rv">Real hardware, designed and fabricated end-to-end — not simulations.</p>
-    <div class="proj-grid persp">
-      <article class="proj r3d rv">
-        <div class="proj-img">
-          <div class="scanline"></div>
-          <span class="proj-date">Sep – Dec 2024</span>
-          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80&auto=format&fit=crop" alt="Custom motorized coffee grinder project"
-               loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80&auto=format&fit=crop'">
-        </div>
-        <div class="proj-body">
-          <h3>Custom Motorized Coffee Grinder</h3>
-          <p>Designed and fabricated a motorized grinder around a <b>24V DC motor</b> and precision burrs. Built a custom wood base and mechanical couplings for stability and alignment, prototyped a <b>grind-by-weight system</b> for consistent output, and optimized grind quality through iterative motor-load and durability testing.</p>
-          <div class="proj-tags"><span class="tag">24V DC Motor</span><span class="tag">SolidWorks</span><span class="tag">Fabrication</span><span class="tag">Iterative Testing</span></div>
-        </div>
-      </article>
-      <article class="proj r3d rv">
-        <div class="proj-img">
-          <div class="scanline"></div>
-          <span class="proj-date">Nov – Dec 2024</span>
-          <img src="https://images.unsplash.com/photo-1597852074816-d933c7d2b988?w=1200&q=80&auto=format&fit=crop" alt="PCB assembly and soldering project"
-               loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80&auto=format&fit=crop'">
-        </div>
-        <div class="proj-body">
-          <h3>PCB Assembly &amp; Validation</h3>
-          <p>Assembled and soldered components onto a PCB using precision <b>through-hole and surface-mount</b> techniques. Interpreted schematics for accurate placement, then verified full board functionality through systematic testing and troubleshooting with oscilloscopes and multimeters.</p>
-          <div class="proj-tags"><span class="tag">THT + SMT</span><span class="tag">Schematics</span><span class="tag">Oscilloscope</span><span class="tag">Troubleshooting</span></div>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ================= EXPERIENCE ================= -->
-<section id="experience" data-toast="🛰 EXPERIENCE LOG DECRYPTED">
-  <div class="wrap">
-    <div class="sec-tag rv">04 · Experience</div>
-    <h2 class="rv">Where I've shipped.</h2>
-    <p class="sec-sub rv">Two industry roles before third year — infrastructure scale and design-office precision.</p>
-    <div class="timeline">
-      <div class="titem rv">
-        <div class="t-date">SEP 2025 – APR 2026</div>
-        <h3>Field Engineer — Co-op</h3>
-        <div class="t-co"><b>Flatiron Dragados</b> · Richmond, B.C. · Surrey–Langley SkyTrain</div>
-        <ul>
-          <li>Coordinated electrical and roadway IFC design on the <b>16 km Surrey–Langley SkyTrain expansion</b>, producing detailed Bluebeam markups and supporting RFI submissions that resolved field and design discrepancies</li>
-          <li>Processed survey data with <b>Propeller Aero and CAD tools</b> to analyze site conditions and optimize curb, gutter, and roadway layouts — improving constructability for field crews</li>
-          <li>Built <b>Excel-based tracking systems</b> with automated formulas that streamlined quantity tracking, scheduling, and field reporting</li>
-          <li>Managed coordination across <b>5 subcontractors with &gt;$20M contracts each</b>, supporting progress tracking and alignment with project deliverables</li>
-        </ul>
-      </div>
-      <div class="titem rv">
-        <div class="t-date">JUN 2024 – SEP 2024</div>
-        <h3>Engineering Assistant — Marine Design</h3>
-        <div class="t-co"><b>Autoship Systems Corporation</b> · Vancouver, B.C.</div>
-        <ul>
-          <li>Used <b>AutoCAD</b> to trace and modify ship design schematics for naval architecture projects</li>
-          <li>Prepared accurate design layers and technical drawings supporting senior engineers</li>
-          <li>Interpreted complex marine blueprints and industry design standards</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= EDUCATION ================= -->
-<section id="education" data-toast="🎓 EDUCATION.CFG VERIFIED">
-  <div class="wrap persp">
-    <div class="sec-tag rv">05 · Education</div>
-    <h2 class="rv">Foundations.</h2>
-    <div class="edu r3d rv">
-      <div class="edu-ico"><svg viewBox="0 0 24 24"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/><path d="M22 10v6"/></svg></div>
+    <div class="sec-head reveal">
       <div>
-        <h3>Simon Fraser University</h3>
-        <div class="deg">BASc — Engineering Science · Sep 2024 – Present</div>
-        <p>Coursework spanning circuits and electronics fundamentals, engineering design and fabrication, programming, and applied mathematics — with every course's lab section treated as the main event.</p>
+        <p class="eyebrow">01 · Featured engineering projects</p>
+        <h2 id="projects-h">Designed, built, and debugged.</h2>
+        <p class="lede">Each entry is a case file: what it is, why it exists, how it was built, and what broke along the way. Expand any project for the full write-up.</p>
       </div>
+      <button class="open-win" data-open="projects"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 4h6v6M20 4l-8 8M10 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4"/></svg>Open as window</button>
+    </div>
+
+    <div class="projects">
+
+      <!-- ---------- P1: Coffee grinder ---------- -->
+      <article class="proj reveal" data-proj="grinder">
+        <h3>
+        <button class="proj-sum" aria-expanded="false">
+          <span class="proj-idx">PRJ<b>01</b></span>
+          <span>
+            <span class="proj-title">Custom Motorized Precision Coffee Grinder</span>
+            <span class="proj-meta"><span>Sep–Dec 2024</span><span>Electromechanical design</span><span>24 V DC motor · SolidWorks · fabrication</span></span>
+          </span>
+          <span class="proj-ctl"><span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span></span>
+        </button>
+        </h3>
+        <div class="proj-body"><div><div class="proj-inner">
+          <div class="case">
+            <dl class="qa">
+              <div><dt>What I built</dt><dd>A motorized burr grinder designed and fabricated from scratch: a <b>24 V DC motor</b> driving precision burrs through custom mechanical couplings, mounted on a purpose-built wood base, with a prototype <b>grind-by-weight</b> system for repeatable output.</dd></div>
+              <div><dt>Why</dt><dd>Consistent grind size and dose are what make coffee repeatable, and consumer grinders hide all of the interesting engineering. Building one exposed every layer: motor selection, torque under load, alignment, vibration, and control.</dd></div>
+              <div><dt>How</dt><dd><ul>
+                <li>Modelled the base, couplings and burr carrier in <b>SolidWorks</b>, then fabricated the wood base and mechanical couplings for stability and shaft alignment.</li>
+                <li>Selected and mounted a 24 V DC motor and matched it to the burr set's load.</li>
+                <li>Prototyped a grind-by-weight cut-off so the machine stops at a target mass instead of a timer.</li>
+                <li>Ran iterative <b>motor-load and durability testing</b>, adjusting alignment and coupling stiffness between runs.</li>
+              </ul></dd></div>
+              <div><dt>Engineering problem</dt><dd>Grind quality depends on keeping the burr gap constant while the motor sees a varying load. Any coupling misalignment or base flex shows up directly as inconsistent particle size, so the mechanical design had to be stiff and concentric before any control work mattered.</dd></div>
+              <div><dt>What was difficult</dt><dd>Getting alignment right with hand-fabricated parts: small errors in the couplings caused vibration and uneven grinding under load, which only appeared during sustained testing rather than on the bench.</dd></div>
+              <div><dt>What I learned</dt><dd>Test under real load early. Mechanical tolerances gate everything downstream, and a control loop (grind-by-weight) can only be as consistent as the mechanism it controls.</dd></div>
+              <div><dt>Result</dt><dd>A working, stable grinder with consistent output validated through repeated load and durability runs, and a grind-by-weight prototype demonstrating dose control.</dd></div>
+              <div><dt>Technologies</dt><dd><div class="tech"><button data-skill="SolidWorks">SolidWorks</button><span>24 V DC motor</span><span>Fabrication</span><span>Mechanical couplings</span><span>Load &amp; durability testing</span></div></dd></div>
+            </dl>
+            <div class="viz">
+              <figure>
+                <div class="stack">
+                  <img class="photo" src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=900&q=70&auto=format&fit=crop" alt="Close-up of freshly ground coffee beside a burr grinder" loading="lazy" width="900" height="506" decoding="async" onerror="this.style.display='none'">
+                  <div class="grad" aria-hidden="true"></div>
+                </div>
+                <svg class="dia" viewBox="0 0 420 200" role="img" aria-labelledby="g-dia-t"><title id="g-dia-t">System diagram: 24 V supply drives the DC motor through a coupling to the burr set; a scale feeds a grind-by-weight cut-off back to the motor enable.</title>
+                  <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5 0 10z" class="arrow"/></marker></defs>
+                  <rect x="14" y="40" width="70" height="40" rx="4" class="box"/><text x="49" y="57" text-anchor="middle" class="t">24 V DC</text><text x="49" y="70" text-anchor="middle">supply</text>
+                  <rect x="118" y="40" width="70" height="40" rx="4" class="box acc"/><text x="153" y="57" text-anchor="middle" class="t">DC motor</text><text x="153" y="70" text-anchor="middle">24 V</text>
+                  <rect x="222" y="40" width="70" height="40" rx="4" class="box"/><text x="257" y="57" text-anchor="middle" class="t">Coupling</text><text x="257" y="70" text-anchor="middle">custom</text>
+                  <rect x="326" y="40" width="80" height="40" rx="4" class="box acc"/><text x="366" y="57" text-anchor="middle" class="t">Burr set</text><text x="366" y="70" text-anchor="middle">precision</text>
+                  <path d="M84 60H118" class="w" marker-end="url(#ah)"/><path d="M84 60H118" class="w sig"/>
+                  <path d="M188 60H222" class="w" marker-end="url(#ah)"/><path d="M188 60H222" class="w sig d2"/>
+                  <path d="M292 60H326" class="w" marker-end="url(#ah)"/><path d="M292 60H326" class="w sig d3"/>
+                  <path d="M366 80V118" class="w" marker-end="url(#ah)"/>
+                  <rect x="326" y="120" width="80" height="36" rx="4" class="box"/><text x="366" y="136" text-anchor="middle" class="t">Scale</text><text x="366" y="148" text-anchor="middle">grounds mass</text>
+                  <path d="M326 138H190" class="w" marker-end="url(#ah)"/><path d="M326 138H190" class="w sig"/>
+                  <rect x="100" y="120" width="90" height="36" rx="4" class="box acc"/><text x="145" y="136" text-anchor="middle" class="t">Target compare</text><text x="145" y="148" text-anchor="middle">grind-by-weight</text>
+                  <path d="M145 120V80" class="w" marker-end="url(#ah)"/>
+                  <text x="100" y="112" class="dim">motor enable ⟲</text>
+                  <text x="14" y="188" class="dim">Feedback loop: stop at target mass instead of a fixed time.</text>
+                  <text x="14" y="22" class="dim">WOOD BASE · MECHANICAL ALIGNMENT · ITERATIVE LOAD TESTING</text>
+                </svg>
+                <figcaption><span>Fig. 1 — Drive train + grind-by-weight loop</span><span>Photo: representative (Unsplash)</span></figcaption>
+              </figure>
+            </div>
+          </div>
+        </div></div></div>
+      </article>
+
+      <!-- ---------- P2: PCB ---------- -->
+      <article class="proj reveal" data-proj="pcb">
+        <h3>
+        <button class="proj-sum" aria-expanded="false">
+          <span class="proj-idx">PRJ<b>02</b></span>
+          <span>
+            <span class="proj-title">PCB Assembly &amp; Functional Validation</span>
+            <span class="proj-meta"><span>Nov–Dec 2024</span><span>Electronics · test &amp; debug</span><span>THT + SMT soldering · oscilloscope · multimeter</span></span>
+          </span>
+          <span class="proj-ctl"><span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span></span>
+        </button>
+        </h3>
+        <div class="proj-body"><div><div class="proj-inner">
+          <div class="case">
+            <dl class="qa">
+              <div><dt>What I built</dt><dd>A fully populated and verified printed circuit board: components placed and soldered using both <b>through-hole and surface-mount</b> techniques, then brought up and validated against the schematic.</dd></div>
+              <div><dt>Why</dt><dd>Reading a schematic and turning it into a board that measures correctly is the core loop of electronics work. This was the first time I owned that loop end-to-end, from bare board to a signed-off functional test.</dd></div>
+              <div><dt>How</dt><dd><ul>
+                <li>Interpreted the <b>schematic</b> and component footprints to plan placement and orientation (polarity, pin 1, reference designators).</li>
+                <li>Soldered through-hole parts, then surface-mount parts with precision technique and inspection.</li>
+                <li>Powered up in stages and verified the board with a <b>DC power supply, multimeter and oscilloscope</b>: continuity, rail voltages, then signals at test points.</li>
+                <li>Systematically isolated and reworked faults found during test.</li>
+              </ul></dd></div>
+              <div><dt>Engineering problem</dt><dd>A board with dozens of joints has dozens of ways to fail silently. The problem was building a test procedure that finds cold joints, bridges and wrong-orientation parts quickly, without damaging the board by powering a fault.</dd></div>
+              <div><dt>What was difficult</dt><dd>Surface-mount soldering at small pitch, and then diagnosing symptoms that could have several root causes. Probing with the oscilloscope and reasoning back to the schematic was the only reliable way to separate assembly errors from real circuit behaviour.</dd></div>
+              <div><dt>What I learned</dt><dd>Inspection before power. Verify rails before signals. A disciplined bring-up order turns debugging from guesswork into a checklist, and good soldering technique is mostly heat management and patience.</dd></div>
+              <div><dt>Result</dt><dd>A fully functional board, verified joint-by-joint and signal-by-signal, with faults found in test traced to root cause and corrected.</dd></div>
+              <div><dt>Technologies</dt><dd><div class="tech"><button data-skill="THT + SMT Soldering">THT + SMT soldering</button><button data-skill="Oscilloscope">Oscilloscope</button><button data-skill="Multimeter">Multimeter</button><button data-skill="Schematic Reading">Schematic reading</button><button data-skill="DC Power Supply">DC power supply</button></div></dd></div>
+            </dl>
+            <div class="viz">
+              <figure>
+                <div class="stack">
+                  <img class="photo" src="https://images.unsplash.com/photo-1597852074816-d933c7d2b988?w=900&q=70&auto=format&fit=crop" alt="Green printed circuit board with surface-mount components" loading="lazy" width="900" height="506" decoding="async" onerror="this.style.display='none'">
+                  <div class="grad" aria-hidden="true"></div>
+                </div>
+                <svg class="pcb-svg" viewBox="0 0 420 210" role="img" aria-labelledby="p-dia-t"><title id="p-dia-t">Bring-up map of the board: power input, regulator, microcontroller, headers and test points, with the probe sequence used for validation.</title>
+                  <rect x="10" y="10" width="400" height="170" rx="6" fill="#0f1a14" stroke="#2c4a3a"/>
+                  <g class="trace">
+                    <path d="M60 60H120V90H170" /><path d="M170 90H230" /><path d="M230 90V130H300" /><path d="M230 60H330" /><path d="M120 130H170V150H230"/><path d="M330 60V120H380"/>
+                  </g>
+                  <g class="trace sig"><path d="M60 60H120V90H170"/><path d="M230 60H330"/><path d="M230 90V130H300"/></g>
+                  <g class="comp"><rect x="24" y="44" width="36" height="32" rx="2"><title>J1 — DC power input (through-hole)</title></rect><text x="27" y="86">J1 PWR</text></g>
+                  <g class="comp"><rect x="120" y="52" width="26" height="16" rx="1"><title>U1 — voltage regulator (SMT)</title></rect><text x="118" y="48">U1 REG</text></g>
+                  <g class="comp"><rect x="170" y="70" width="60" height="44" rx="2"><title>U2 — microcontroller (SMT, fine pitch)</title></rect><text x="182" y="66">U2 MCU</text></g>
+                  <g class="comp"><rect x="300" y="118" width="70" height="24" rx="2"><title>J2 — header (through-hole)</title></rect><text x="300" y="112">J2 HDR</text></g>
+                  <g class="comp"><rect x="330" y="46" width="24" height="10" rx="1"><title>C3 — decoupling capacitor (SMT)</title></rect><text x="322" y="42">C3</text></g>
+                  <g class="comp"><rect x="150" y="142" width="18" height="8" rx="1"><title>R5 — resistor (SMT)</title></rect><text x="150" y="162">R5</text></g>
+                  <g class="comp"><rect x="255" y="150" width="18" height="8" rx="1"><title>R6 — resistor (SMT)</title></rect><text x="255" y="170">R6</text></g>
+                  <g><circle cx="120" cy="90" r="3.5" class="pad"/><text x="126" y="102">TP1 5V</text></g>
+                  <g><circle cx="230" cy="60" r="3.5" class="pad"/><text x="236" y="56">TP2 3V3</text></g>
+                  <g><circle cx="300" cy="90" r="3.5" class="pad"/><text x="306" y="86">TP3 CLK</text></g>
+                  <g><circle cx="380" cy="120" r="3.5" class="pad"/><text x="352" y="164">TP4 GND</text></g>
+                  <g class="probe" aria-hidden="true"><path d="M300 92 L340 46" stroke="#e9ecef" stroke-width="2" stroke-linecap="round"/><circle cx="300" cy="92" r="2" fill="#f0b64a"/></g>
+                  <text x="14" y="200" fill="#808b98">BRING-UP ORDER: inspect → continuity → rails (TP1, TP2) → signals (TP3) → rework</text>
+                </svg>
+                <figcaption><span>Fig. 2 — Bring-up map (hover components)</span><span>Photo: representative (Unsplash)</span></figcaption>
+              </figure>
+            </div>
+          </div>
+        </div></div></div>
+      </article>
+
+      <!-- ---------- P3: FPGA alarm clock ---------- -->
+      <article class="proj reveal" data-proj="fpga">
+        <h3>
+        <button class="proj-sum" aria-expanded="false">
+          <span class="proj-idx">PRJ<b>03</b></span>
+          <span>
+            <span class="proj-title">Digital Alarm Clock in VHDL on a Cyclone V FPGA</span>
+            <span class="proj-meta"><span>ENSC 252 final project</span><span>Digital logic · FPGA</span><span>VHDL-2008 · Quartus Prime · ModelSim · DE10-Standard</span></span>
+          </span>
+          <span class="proj-ctl"><span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span></span>
+        </button>
+        </h3>
+        <div class="proj-body"><div><div class="proj-inner">
+          <div class="case">
+            <dl class="qa">
+              <div><dt>What I built</dt><dd>A digital alarm clock implemented entirely in <b>VHDL</b> and demonstrated on a Terasic <b>DE10-Standard</b> board (Intel Cyclone V 5CSXFC6D6F31C6): cascaded time counters, a settable alarm, and a finite-state machine driving the board's inputs and displays. Built with a lab partner as the course's final project.</dd></div>
+              <div><dt>Why</dt><dd>A clock is the classic sequential-logic system: it needs clock division from the 50 MHz oscillator, modulo counters that carry into each other, an FSM for set/run/alarm modes, and comparison logic. It exercises every idea from the course in one piece of real hardware.</dd></div>
+              <div><dt>How</dt><dd><ul>
+                <li>Designed the datapath as a chain of modulo counters (seconds → minutes → hours) with carry-out into the next stage, plus alarm registers and an equality comparator.</li>
+                <li>Modelled the control as a <b>Moore FSM</b> with explicit state encoding, driving the display and alarm output.</li>
+                <li>Wrote testbenches and simulated in <b>ModelSim</b> (VHDL-2008) and <b>GHDL 4.1</b> before touching hardware.</li>
+                <li>Synthesized in <b>Quartus Prime</b>, pinned to the DE10-Standard, and debugged on-chip with <b>SignalTap</b>.</li>
+              </ul></dd></div>
+              <div><dt>Engineering problem</dt><dd>Keeping a multi-stage counter, a settable alarm and user input consistent under one 50 MHz clock without glitches: every carry, reset and mode change has to be synchronous, and the design has to synthesize identically to how it simulated.</dd></div>
+              <div><dt>What was difficult</dt><dd>Tooling. A SignalTap capture appeared broken because the CLOCK_50 net had been typed by hand instead of selected through the Node Finder, which created a phantom unconnected clock pin. ModelSim needed VHDL-2008 enabled for expressions like <code class="mono">not KEY(n)</code> in port maps, and testbenches that worked with direct entity instantiation in GHDL had to be rewritten with component instantiation for Quartus.</dd></div>
+              <div><dt>What I learned</dt><dd>Simulation, synthesis and on-chip debug are three different tools with three different opinions about your code. Understanding <em>why</em> they disagree (language standards, instantiation styles, clock-net binding) is the real FPGA skill, on top of the logic design itself.</dd></div>
+              <div><dt>Result</dt><dd>Completed and <b>successfully demonstrated on the DE10-Standard</b>. The interactive figure runs the same counter cascade and alarm-compare logic in your browser.</dd></div>
+              <div><dt>Technologies</dt><dd><div class="tech"><button data-skill="VHDL">VHDL-2008</button><button data-skill="Quartus Prime">Quartus Prime</button><button data-skill="ModelSim">ModelSim</button><button data-skill="GHDL">GHDL</button><button data-skill="FPGA (DE10-Standard)">DE10-Standard</button><button data-skill="SignalTap">SignalTap</button></div></dd></div>
+            </dl>
+            <div class="viz">
+              <figure>
+                <div class="adder clockviz" data-clockviz>
+                  <div class="bits" style="justify-content:space-between"><span style="color:var(--text-3)">CLOCK_50 ÷ 50 000 000 → 1 Hz tick</span><span class="dim" data-tick>tick</span></div>
+                  <svg class="fa-svg dia" viewBox="0 0 420 190" role="img" aria-label="Counter cascade: seconds, minutes and hours modulo counters with carry, compared against the alarm register">
+                    <rect x="14" y="60" width="90" height="56" rx="4" class="box acc"/><text x="59" y="80" text-anchor="middle" class="t">SEC mod-60</text><text x="59" y="102" text-anchor="middle" class="out" data-f="s">00</text>
+                    <rect x="150" y="60" width="90" height="56" rx="4" class="box acc"/><text x="195" y="80" text-anchor="middle" class="t">MIN mod-60</text><text x="195" y="102" text-anchor="middle" class="out" data-f="m">00</text>
+                    <rect x="286" y="60" width="90" height="56" rx="4" class="box acc"/><text x="331" y="80" text-anchor="middle" class="t">HR mod-24</text><text x="331" y="102" text-anchor="middle" class="out" data-f="h">00</text>
+                    <path d="M104 88H150" class="wire" data-w="cs"/><text x="127" y="82" text-anchor="middle" class="lbl">carry</text>
+                    <path d="M240 88H286" class="wire" data-w="cm"/><text x="263" y="82" text-anchor="middle" class="lbl">carry</text>
+                    <path d="M0 88H14" class="wire hi"/><text x="4" y="80" class="lbl">1 Hz</text>
+                    <rect x="130" y="140" width="220" height="34" rx="4" class="box"/><text x="240" y="161" text-anchor="middle" class="t">ALARM REG == {HR,MIN} ?</text>
+                    <path d="M195 116V140" class="wire"/><path d="M331 116V140" class="wire"/>
+                    <path d="M350 157H378" class="wire" data-w="al"/><circle cx="386" cy="157" r="6" fill="#1a1f26" stroke="#2f3742" data-led/><text x="368" y="184" class="lbl">ALARM</text>
+                    <text x="14" y="152" class="lbl">Moore FSM</text><text x="14" y="166" class="lbl" data-state>RUN (Q=01)</text>
+                  </svg>
+                  <div class="sum" style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:12px">
+                    <label for="alarmH" style="color:var(--text-3)">Set alarm</label>
+                    <input class="bit" id="alarmH" type="number" min="0" max="23" value="0" aria-label="Alarm hour" style="width:52px;padding:0 6px">
+                    <span>:</span>
+                    <input class="bit" type="number" min="0" max="59" value="1" aria-label="Alarm minute" style="width:52px;padding:0 6px" data-alarm-m>
+                    <button class="bit" type="button" style="width:auto;padding:0 10px" data-fast aria-pressed="false">×60 speed</button>
+                    <button class="bit" type="button" style="width:auto;padding:0 10px" data-reset>reset</button>
+                  </div>
+                  <p class="eq">Sim: counters roll over on carry; alarm asserts when HR:MIN matches the register.</p>
+                </div>
+                <figcaption><span>Fig. 3 — Interactive counter cascade (browser port of the design)</span><span>Cyclone V · 50 MHz</span></figcaption>
+              </figure>
+            </div>
+          </div>
+        </div></div></div>
+      </article>
+
+
     </div>
   </div>
 </section>
 
-<!-- scope wave -->
-<div class="scope" style="margin-top:clamp(80px,11vh,130px)" aria-hidden="true">
-  <svg viewBox="0 0 1200 64" preserveAspectRatio="none">
-    <path d="M0 32 H80 L95 8 L110 56 L125 32 H230 L245 14 L260 50 L275 32 H380 L390 32 L400 6 L412 58 L424 32 H530 L545 12 L560 52 L575 32 H600 H680 L695 8 L710 56 L725 32 H830 L845 14 L860 50 L875 32 H980 L990 32 L1000 6 L1012 58 L1024 32 H1130 L1145 12 L1160 52 L1175 32 H1200"/>
-  </svg>
-</div>
-
-<!-- ================= CONTACT ================= -->
-<section id="contact" data-toast="📨 COMM CHANNEL OPEN">
+<!-- ============================ EXPERIENCE ============================ -->
+<section class="block" id="experience" aria-labelledby="experience-h" data-win-title="experience.log">
   <div class="wrap">
-    <div class="contact-box rv">
-      <div class="sec-tag" style="justify-content:center">06 · Contact</div>
-      <h2>Let's build something real.</h2>
-      <p>Looking for internship and co-op opportunities in electronics, embedded systems, and semiconductors. If you're working on silicon, boards, or the firmware in between — I'd love to talk.</p>
-      <a class="btn btn-p" href="mailto:msu4@sfu.ca">Say hello → msu4@sfu.ca</a>
-      <div class="contact-links">
-        <a class="clink" href="https://www.linkedin.com/in/mastaan-uppal" target="_blank" rel="noopener">in/ LinkedIn</a>
-        <a class="clink" href="https://github.com/mastaanuppal-dotcom" target="_blank" rel="noopener">&lt;/&gt; GitHub</a>
-        <a class="clink" href="mailto:mastaanuppal@gmail.com">✉ mastaanuppal@gmail.com</a>
-        <a class="clink" href="tel:+12369714079">☎ 236-971-4079</a>
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow">02 · Experience</p>
+        <h2 id="experience-h">Two industry roles before third year.</h2>
+        <p class="lede">A design office and a $4B+ transit megaproject. Different scales, same job: turn drawings into something that gets built correctly.</p>
+      </div>
+      <button class="open-win" data-open="experience"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 4h6v6M20 4l-8 8M10 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4"/></svg>Open as window</button>
+    </div>
+
+    <div class="timeline">
+      <!-- Flatiron Dragados -->
+      <article class="tl-item reveal">
+        <p class="tl-date">SEP 2025 — APR 2026 · CO-OP</p>
+        <h3>Field Engineer</h3>
+        <p class="tl-org"><b>Flatiron Dragados</b> · Richmond, B.C. · Surrey–Langley SkyTrain expansion</p>
+        <ul class="bullets">
+          <li>Coordinated <b>electrical and roadway IFC design</b> on the 16 km Surrey–Langley SkyTrain expansion, producing detailed Bluebeam markups and supporting RFI submissions that resolved field and design discrepancies.</li>
+          <li>Processed survey data with <b>Propeller Aero and CAD tools</b> to analyze site conditions and optimize curb, gutter and roadway layouts, improving constructability for field crews.</li>
+          <li>Built <b>Excel-based tracking systems</b> with automated formulas that streamlined quantity tracking, scheduling and field reporting.</li>
+          <li>Managed coordination across <b>5 subcontractors with &gt;$20M contracts each</b>, supporting progress tracking and alignment with project deliverables.</li>
+        </ul>
+        <div class="casestudy">
+          <div class="cs-viz">
+            <svg class="sky-svg" viewBox="0 0 900 200" role="img" aria-labelledby="sky-t"><title id="sky-t">Schematic of the 16 km Surrey–Langley SkyTrain alignment with the three design layers coordinated: electrical IFC, roadway IFC and survey data.</title>
+              <defs><path id="rail" d="M40 120 C 200 120, 260 70, 420 70 S 640 120, 860 110"/></defs>
+              <text x="40" y="34" class="t">SURREY–LANGLEY SKYTRAIN · 16 km ELEVATED GUIDEWAY</text>
+              <text x="40" y="50">Design coordination scope · Sep 2025 – Apr 2026</text>
+              <use href="#rail" class="rail ghost" transform="translate(0,-14)"/>
+              <use href="#rail" class="rail ghost" transform="translate(0,14)"/>
+              <use href="#rail" class="rail"/>
+              <g class="stn"><circle cx="40" cy="120" r="5"/><circle cx="240" cy="90" r="5"/><circle cx="420" cy="70" r="5"/><circle cx="600" cy="93" r="5"/><circle cx="860" cy="110" r="5"/></g>
+              <text x="30" y="150">0 km</text><text x="836" y="140">16 km</text>
+              <circle r="5" fill="#f0b64a" class="tr" style="offset-path:path('M40 120 C 200 120, 260 70, 420 70 S 640 120, 860 110')"><title>train</title></circle>
+              <g transform="translate(40,168)">
+                <rect width="14" height="10" rx="2" class="lay hl"/><text x="20" y="9">Electrical IFC</text>
+                <rect x="120" width="14" height="10" rx="2" class="lay hl"/><text x="140" y="9">Roadway IFC · curb / gutter</text>
+                <rect x="320" width="14" height="10" rx="2" class="lay hl"/><text x="340" y="9">Survey · Propeller Aero</text>
+                <rect x="500" width="14" height="10" rx="2" class="lay hl"/><text x="520" y="9">RFIs · Bluebeam markups</text>
+                <rect x="680" width="14" height="10" rx="2" class="lay hl"/><text x="700" y="9">5 subcontractors · $20M+ each</text>
+              </g>
+            </svg>
+          </div>
+          <div class="cs-grid">
+            <div><h4>Project scale</h4><span class="big">16 km</span><p>Elevated guideway expansion of Metro Vancouver's SkyTrain, a <b>$4B+</b> transit megaproject delivered by Flatiron Dragados.</p></div>
+            <div><h4>Coordination</h4><span class="big">5 × $20M+</span><p>Subcontractors coordinated, each holding a contract over $20M; tracked progress and alignment with project deliverables.</p></div>
+            <div><h4>Responsibilities</h4><ul><li>Electrical and roadway IFC design coordination</li><li>RFI support and design-discrepancy resolution</li><li>Survey data processing and layout optimization</li><li>Quantity tracking, scheduling and field reporting</li></ul></div>
+            <div><h4>Engineering tools</h4><ul><li><b>Bluebeam</b> — markups and IFC review</li><li><b>Propeller Aero</b> — drone survey data</li><li><b>AutoCAD / CAD</b> — site and roadway layouts</li><li><b>Excel</b> — automated tracking systems</li></ul></div>
+            <div><h4>Technical problem solving</h4><p>Reconciled field conditions with IFC drawings: identified discrepancies, documented them as markups and RFIs, and used processed survey data to refine curb, gutter and roadway geometry so crews could build it as drawn.</p></div>
+            <div><h4>Deliverables</h4><ul><li>Bluebeam markup sets and RFI submissions</li><li>Optimized curb / gutter / roadway layouts</li><li>Excel tracking systems with automated formulas</li><li>Subcontractor progress and deliverable tracking</li></ul></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Autoship -->
+      <article class="tl-item reveal">
+        <p class="tl-date">JUN 2024 — SEP 2024</p>
+        <h3>Engineering Assistant — Marine Design</h3>
+        <p class="tl-org"><b>Autoship Systems Corporation</b> · Vancouver, B.C.</p>
+        <ul class="bullets">
+          <li>Used <b>AutoCAD</b> to trace and modify ship design schematics for naval architecture projects.</li>
+          <li>Prepared accurate design layers and technical drawings supporting senior engineers.</li>
+          <li>Interpreted complex marine blueprints and industry design standards.</li>
+        </ul>
+        <div class="casestudy">
+          <div class="cs-grid">
+            <div><h4>Environment</h4><p>Naval architecture design office. Work was reviewed by senior engineers and had to meet <b>industry design standards</b>.</p></div>
+            <div><h4>Engineering tools</h4><ul><li><b>AutoCAD</b> — schematic tracing, layer management, technical drawings</li><li>Marine blueprints and design standards</li></ul></div>
+            <div><h4>Deliverables</h4><ul><li>Modified ship design schematics</li><li>Clean design layers and technical drawings for senior engineers</li></ul></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SKILLS ============================ -->
+<section class="block" id="skills" aria-labelledby="skills-h" data-win-title="skills.map">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow">03 · Technical skills</p>
+        <h2 id="skills-h">Every skill points at where it was used.</h2>
+        <p class="lede">Select a skill to see the projects and roles behind it. Nothing here is listed without a place it was actually applied.</p>
+      </div>
+      <button class="open-win" data-open="skills"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 4h6v6M20 4l-8 8M10 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4"/></svg>Open as window</button>
+    </div>
+    <div class="skills-layout">
+      <div class="reveal" data-skill-groups></div>
+      <aside class="skill-panel reveal" data-delay="1" aria-live="polite" data-skill-panel>
+        <div class="sp-head"><span>SKILL → EVIDENCE</span><span class="dim" data-sp-count></span></div>
+        <div class="sp-body">
+          <p class="sp-empty">Pick a skill on the left. The panel shows each project or role where it was used, with a link straight to it. Use <kbd>Tab</kbd> and <kbd>Enter</kbd> to navigate by keyboard.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ EDUCATION ============================ -->
+<section class="block" id="education" aria-labelledby="education-h" data-win-title="education.txt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow">04 · Education</p>
+        <h2 id="education-h">Simon Fraser University</h2>
+      </div>
+      <button class="open-win" data-open="education"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 4h6v6M20 4l-8 8M10 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4"/></svg>Open as window</button>
+    </div>
+    <div class="two">
+      <div class="card reveal">
+        <h3>BASc, Engineering Science — Electronics</h3>
+        <p class="sub">Simon Fraser University · Sep 2024 – present · Surrey / Burnaby, B.C.</p>
+        <dl class="kv">
+          <dt>Focus</dt><dd>Electronics, embedded systems, digital logic and FPGA design</dd>
+          <dt>Approach</dt><dd>Every course's lab section treated as the main event: circuits are measured, logic is synthesized, code is run on hardware.</dd>
+          <dt>Goal</dt><dd>Semiconductor and embedded-systems industry, where the silicon everything else runs on gets designed.</dd>
+        </dl>
+      </div>
+      <div class="card reveal" data-delay="1">
+        <h3>Relevant coursework</h3>
+        <p class="sub">Selected courses and what they covered in the lab.</p>
+        <div class="courses">
+          <span title="Electric circuits: nodal/mesh analysis, Thévenin, transient RLC, AC phasors, op-amps, LTspice, Bode plots">ENSC 220 · Circuits</span>
+          <span title="C++ programming; Go Fish group project">ENSC 251 · C++</span>
+          <span title="Digital logic and design: VHDL on FPGA, FSMs, K-maps, sequential circuits">ENSC 252 · Digital Logic</span>
+          <span title="Engineering statistics: distributions, error propagation">ENSC 280 · Statistics</span>
+          <span title="Complex analysis and vector calculus">MATH 254 · Complex Analysis &amp; Vector Calculus</span>
+          <span title="Fall 2026">ENSC 204</span><span title="Fall 2026 · Engineering Electromagnetics I">ENSC 316 · Electromagnetics I</span><span title="Fall 2026">ENSC 324</span><span title="Fall 2026 · Linear Systems">ENSC 380 · Linear Systems</span>
+        </div>
+        <dl class="kv" style="margin-top:20px">
+          <dt>Hands-on</dt><dd>Circuit analysis and measurement (DMM error analysis, LTspice), VHDL labs on the DE10-Standard (ripple-carry adder, parity circuit, FSMs, alarm clock), C++ group project, breadboard and lab skills.</dd>
+        </dl>
       </div>
     </div>
   </div>
 </section>
+
+<!-- ============================ RESUME ============================ -->
+<section class="block" id="resume" aria-labelledby="resume-h" data-win-title="resume.pdf">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow">05 · Résumé</p>
+        <h2 id="resume-h">The one-page version.</h2>
+      </div>
+    </div>
+    <div class="card resume-card reveal">
+      <div class="doc" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div>
+        <h3>Mastaan Uppal — Résumé</h3>
+        <p class="sub">Same content as this site, formatted for applicant-tracking systems and printing. Updated September 2026.</p>
+        <div class="cta-row" style="margin-top:16px">
+          <a class="btn primary" href="Mastaan_Uppal_Resume.pdf" download>Download PDF
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12m0 0l-5-5m5 5l5-5M4 20h16"/></svg></a>
+          <a class="btn" href="Mastaan_Uppal_Resume.pdf" target="_blank" rel="noopener">Open in new tab</a>
+          <a class="btn" href="https://www.linkedin.com/in/mastaan-uppal" target="_blank" rel="noopener">LinkedIn profile</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CONTACT ============================ -->
+<section class="block" id="contact" aria-labelledby="contact-h" data-win-title="contact.sh">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow">06 · Contact</p>
+        <h2 id="contact-h">Let's build something real.</h2>
+        <p class="lede">Looking for internship and co-op opportunities in electronics, embedded systems and semiconductors. If you're working on silicon, boards, or the firmware in between, I'd like to talk.</p>
+      </div>
+      <button class="open-win" data-open="contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 4h6v6M20 4l-8 8M10 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4"/></svg>Open as window</button>
+    </div>
+    <div class="contact-grid">
+      <a class="clink reveal" href="mailto:mastaanuppal@gmail.com"><span><span class="l">Email</span><span class="v">mastaanuppal@gmail.com</span></span><button class="copy" type="button" data-copy="mastaanuppal@gmail.com" aria-label="Copy email address">copy</button></a>
+      <a class="clink reveal" data-delay="1" href="mailto:msu4@sfu.ca"><span><span class="l">SFU email</span><span class="v">msu4@sfu.ca</span></span><button class="copy" type="button" data-copy="msu4@sfu.ca" aria-label="Copy SFU email address">copy</button></a>
+      <a class="clink reveal" data-delay="2" href="tel:+12369714079"><span><span class="l">Phone</span><span class="v">+1 236-971-4079</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
+      <a class="clink reveal" data-delay="3" href="https://www.linkedin.com/in/mastaan-uppal" target="_blank" rel="noopener"><span><span class="l">LinkedIn</span><span class="v">in/mastaan-uppal</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+      <a class="clink reveal" data-delay="4" href="https://github.com/mastaanuppal-dotcom" target="_blank" rel="noopener"><span><span class="l">GitHub</span><span class="v">mastaanuppal-dotcom</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+    </div>
+  </div>
+</section>
+</main>
 
 <footer>
-  Designed &amp; built by Mastaan Uppal · Surrey, B.C. <span>·</span> © 2026
-  <span class="bands" title="brown black red gold = 1kΩ"><i style="background:#8b5a2b"></i><i style="background:#222"></i><i style="background:#d33"></i><i style="background:#d4af37"></i></span>
-  <span style="font-family:var(--font-m)">1kΩ of pure resistance</span>
+  <div class="wrap">
+    <span>Designed &amp; built by Mastaan Uppal · Surrey, B.C. · © 2026</span>
+    <span>No frameworks, no trackers · <button class="copy" type="button" data-open="projects">⌘ open a window</button></span>
+  </div>
 </footer>
 
+<aside id="windows" aria-label="Windows"></aside>
+<nav class="dock" id="dock" aria-label="Open windows"><span class="dl">WINDOWS</span><span id="dockTabs" style="display:contents"></span><button class="dclose" id="dockClose">close all</button></nav>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
 <script>
-const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+/* Mastaan Uppal — workstation portfolio. No dependencies. */
+(() => {
+'use strict';
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const FINE = matchMedia('(hover: hover) and (pointer: fine)').matches;
+const isMobile = () => innerWidth <= 768;
 
-/* ---------- boot ---------- */
-const boot=document.getElementById('boot');
-if(reduced){boot.remove()}
-else{
-  const lines=boot.querySelectorAll('.ln');
-  lines.forEach((l,i)=>setTimeout(()=>l.classList.add('on'),200+i*260));
-  setTimeout(()=>document.getElementById('bootbar').style.width='100%',250);
-  setTimeout(()=>boot.classList.add('off'),1500);
-  setTimeout(()=>boot.remove(),2100);
-}
+/* ------------------------------------------------------------
+   Skill → evidence map. Only things on the résumé / real work.
+   type: project (expands the case file), role (experience), course (education), resume (listed only)
+   ------------------------------------------------------------ */
+const EV = {
+  grinder: { type:'project', id:'grinder', w:'Custom Motorized Precision Coffee Grinder' },
+  pcb:     { type:'project', id:'pcb',     w:'PCB Assembly & Functional Validation' },
+  fpga:    { type:'project', id:'fpga',    w:'Digital Alarm Clock in VHDL (DE10-Standard)' },
+  fd:      { type:'role', id:'experience', w:'Flatiron Dragados — Field Engineer (SkyTrain)' },
+  asc:     { type:'role', id:'experience', w:'Autoship Systems — Engineering Assistant, Marine Design' },
+  e220:    { type:'course', id:'education', w:'ENSC 220 — Circuits (lab)' },
+  e251:    { type:'course', id:'education', w:'ENSC 251 — C++ (Go Fish group project)' },
+  e252:    { type:'course', id:'education', w:'ENSC 252 — Digital Logic (VHDL labs)' },
+};
+const SKILLS = [
+  { g:'Hardware & electronics', items:[
+    ['PCB Assembly',        [['pcb','Populated and verified a full board, THT + SMT']]],
+    ['THT + SMT Soldering', [['pcb','Through-hole and fine-pitch surface-mount work']]],
+    ['Oscilloscope',        [['pcb','Signal-level bring-up at test points'],['e220','AC / transient lab measurements']]],
+    ['Multimeter',          [['pcb','Continuity and rail checks'],['e220','Resistor-network measurements, DMM error analysis']]],
+    ['DC Power Supply',     [['pcb','Staged power-up during validation']]],
+    ['Schematic Reading',   [['pcb','Placement, polarity and test planning from the schematic'],['asc','Ship design schematics in AutoCAD']]],
+    ['Microcontrollers',    []],
+    ['FPGA (DE10-Standard)',[['fpga','Alarm clock synthesized and demoed on Cyclone V'],['e252','Ripple-carry adder, parity circuit, FSM labs']]],
+    ['Arduino',             []],
+    ['Firmware Validation', []],
+  ]},
+  { g:'Digital design & EDA', items:[
+    ['VHDL',            [['fpga','Counters, comparator, Moore FSM in VHDL-2008'],['e252','4-bit ripple-carry adder, parity circuit, FSMs']]],
+    ['Quartus Prime',   [['fpga','Synthesis, pin assignment, programming the DE10-Standard']]],
+    ['ModelSim',        [['fpga','Testbench simulation in VHDL-2008 mode']]],
+    ['GHDL',            [['fpga','Open-source verification of testbenches']]],
+    ['SignalTap',       [['fpga','On-chip logic capture and clock-net debugging']]],
+    ['EAGLE PCB Design',[]],
+    ['LTspice',         [['e220','Transient RLC, op-amp and AC simulation, Bode plots']]],
+  ]},
+  { g:'Programming', items:[
+    ['C++',       [['e251','Go Fish group final project; unit testing and debugging']]],
+    ['Python',    []],
+    ['Java',      []],
+    ['MATLAB',    []],
+    ['JavaScript',[]],
+    ['Unit Testing',[['e251','C++ coursework']]],
+    ['Debugging', [['pcb','Root-causing assembly faults with scope and DMM'],['fpga','SignalTap / ModelSim / GHDL tool discrepancies']]],
+    ['Excel Automation', [['fd','Automated quantity, schedule and field-reporting trackers']]],
+  ]},
+  { g:'Design & CAD', items:[
+    ['AutoCAD',       [['asc','Traced and modified ship design schematics'],['fd','Site condition and roadway layout work with survey data']]],
+    ['SolidWorks',    [['grinder','Base, couplings and burr carrier modelled before fabrication']]],
+    ['Bluebeam',      [['fd','IFC markups and RFI support on the SkyTrain expansion']]],
+    ['Propeller Aero',[['fd','Drone survey data processing for curb / gutter / roadway']]],
+    ['Technical Drawings',[['asc','Design layers and drawings for senior engineers']]],
+  ]},
+];
 
-/* ---------- marquee ---------- */
-const mq=document.getElementById('mq');mq.innerHTML+=mq.innerHTML;
+/* ------------------------------------------------------------ toast */
+const toast = (msg) => { const t = $('#toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove('show'), 1800); };
 
-/* ---------- power spine ---------- */
-const spine=document.getElementById('spine'),comet=document.getElementById('comet'),spineLit=document.getElementById('spineLit');
-const sections=[...document.querySelectorAll('section[id]')];
-let nodes=[];
-function buildSpine(){
-  spine.querySelectorAll('.snode').forEach(n=>n.remove());
-  const docH=document.documentElement.scrollHeight;
-  spine.style.height=docH+'px';
-  nodes=sections.map(s=>{
-    const y=s.offsetTop+120;
-    const n=document.createElement('div');n.className='snode';n.style.top=y+'px';
-    n.innerHTML=`<span class="tag">${s.id.toUpperCase()}</span>`;
-    spine.appendChild(n);return{el:n,y};
-  });
-}
-buildSpine();
-addEventListener('resize',buildSpine);
-setTimeout(buildSpine,2500); // after fonts/images settle
+/* ------------------------------------------------------------ clock */
+(() => { const c = $('#clock'); if (!c) return;
+  const tick = () => { const d = new Date(); c.textContent = d.toLocaleTimeString('en-CA', { hour12:false, timeZone:'America/Vancouver' }) + ' PT'; };
+  tick(); setInterval(tick, 1000);
+})();
 
-/* ---------- scroll handler (rAF) ---------- */
-const nav=document.getElementById('nav'),prog=document.getElementById('progress');
-const r3ds=[...document.querySelectorAll('.r3d')];
-let ticking=false;
-function onScroll(){
-  if(ticking)return;ticking=true;
-  requestAnimationFrame(()=>{
-    const h=document.documentElement;
-    const p=h.scrollTop/(h.scrollHeight-h.clientHeight);
-    prog.style.width=(p*100)+'%';
-    nav.classList.toggle('scrolled',h.scrollTop>40);
-    // beam position = viewport middle within document
-    const beamY=h.scrollTop+h.clientHeight*.45;
-    comet.style.top=beamY+'px';
-    spineLit.style.height=beamY+'px';
-    nodes.forEach(n=>n.el.classList.toggle('lit',beamY>=n.y));
-    // 3D scroll rotation
-    if(!reduced){
-      const vh=h.clientHeight,vc=vh/2;
-      r3ds.forEach(el=>{
-        const r=el.getBoundingClientRect();
-        if(r.bottom<-80||r.top>vh+80)return;
-        const c=(r.top+r.height/2-vc)/vc;        // -1..1
-        const k=Math.max(-1,Math.min(1,c));
-        el.style.transform=`rotateX(${(-k*22).toFixed(2)}deg) scale(${(1-Math.abs(k)*.06).toFixed(3)})`;
-        el.style.opacity=(1-Math.abs(k)*.35).toFixed(2);
-      });
-      // chip rotation
-      chipRotY=h.scrollTop*.25;
+/* ------------------------------------------------------------ background: PCB traces */
+(() => {
+  const cv = $('#bgc'); if (!cv) return;
+  const st = document.createElement('canvas'); st.id = 'bgs'; cv.parentNode.insertBefore(st, cv);
+  const ctx = cv.getContext('2d', { alpha:true });
+  const MOBILE = matchMedia('(max-width: 768px), (pointer: coarse)').matches;
+  let W, H, dpr, paths = [], pulses = [], off;
+  const ACC = '240,182,74';
+  function build() {
+    dpr = Math.min(devicePixelRatio || 1, 1.5);
+    W = innerWidth; H = innerHeight;
+    cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    st.width = W * dpr; st.height = H * dpr;
+    const g = 40; const cols = Math.ceil(W / g) + 2, rows = Math.ceil(H / g) + 2;
+    const rnd = mulberry(7);
+    paths = [];
+    const n = Math.floor((cols * rows) / (MOBILE ? 60 : 40));
+    for (let i = 0; i < n; i++) {
+      let x = Math.floor(rnd() * cols) * g, y = Math.floor(rnd() * rows) * g;
+      const pts = [[x, y]]; const len = 3 + Math.floor(rnd() * 5);
+      let dir = Math.floor(rnd() * 4);
+      for (let k = 0; k < len; k++) {
+        const r = rnd(); if (r < .3) dir = (dir + 1) % 4; else if (r < .45) dir = (dir + 3) % 4;
+        const step = g * (1 + Math.floor(rnd() * 3));
+        const diag = rnd() < .25;
+        if (diag) { x += (dir % 2 ? 0 : g) * (dir === 2 ? -1 : 1); y += (dir % 2 ? g : g) * (dir === 3 ? -1 : 1); }
+        else if (dir === 0) x += step; else if (dir === 1) y += step; else if (dir === 2) x -= step; else y -= step;
+        pts.push([x, y]);
+      }
+      paths.push(pts);
     }
-    ticking=false;
-  });
-}
-addEventListener('scroll',onScroll,{passive:true});
-
-/* ---------- 3D chip ---------- */
-const chip=document.getElementById('chip');
-let chipRotY=0,idle=0;
-(function spin(){
-  if(!reduced){
-    idle+=.15;
-    chip.style.transform=`rotateY(${chipRotY+idle}deg) rotateX(${Math.sin((chipRotY+idle)*.017)*9}deg)`;
+    const o = st.getContext('2d'); o.setTransform(dpr, 0, 0, dpr, 0, 0); o.clearRect(0, 0, W, H);
+    o.lineCap = 'round'; o.lineJoin = 'round';
+    o.strokeStyle = 'rgba(255,255,255,.07)'; o.lineWidth = 1.5;
+    for (const p of paths) { o.beginPath(); o.moveTo(p[0][0], p[0][1]); for (let i = 1; i < p.length; i++) o.lineTo(p[i][0], p[i][1]); o.stroke();
+      for (const [px, py] of [p[0], p[p.length - 1]]) { o.beginPath(); o.arc(px, py, 3.2, 0, Math.PI * 2); o.fillStyle = '#0b0d10'; o.fill(); o.strokeStyle = 'rgba(255,255,255,.14)'; o.lineWidth = 1.2; o.stroke(); o.strokeStyle = 'rgba(255,255,255,.07)'; o.lineWidth = 1.5; }
+    }
+    pulses = []; for (let i = 0; i < Math.min(MOBILE ? 5 : 12, paths.length); i++) pulses.push(newPulse(rnd));
+    for (const q of pulses) q.L = segLen(q.p);
   }
-  requestAnimationFrame(spin);
+  function newPulse(r) { const p = paths[Math.floor((r || Math.random)() * paths.length)]; return { p, L: segLen(p), t: -Math.random() * 2, v: .25 + Math.random() * .35 }; }
+  function segLen(p) { let L = 0; for (let i = 1; i < p.length; i++) L += Math.hypot(p[i][0] - p[i - 1][0], p[i][1] - p[i - 1][1]); return L; }
+  function ptAt(p, d) { let acc = 0; for (let i = 1; i < p.length; i++) { const l = Math.hypot(p[i][0] - p[i - 1][0], p[i][1] - p[i - 1][1]); if (acc + l >= d) { const k = (d - acc) / l; return [p[i - 1][0] + (p[i][0] - p[i - 1][0]) * k, p[i - 1][1] + (p[i][1] - p[i - 1][1]) * k]; } acc += l; } return p[p.length - 1]; }
+  let last = 0, raf = 0, scrollOff = 0, acc = 0;
+  function draw(ts) {
+    const dt = Math.min(.05, (ts - last) / 1000 || 0); last = ts;
+    acc += dt; if (acc < 1 / 30) return; acc = 0;
+    ctx.clearRect(0, 0, W, H);
+    for (const q of pulses) {
+      q.t += dt * q.v * 1.5; const L = q.L; const d = q.t * L;
+      if (q.t > 1.15) { Object.assign(q, newPulse()); continue; }
+      if (q.t < 0) continue;
+      const head = ptAt(q.p, Math.min(d, L)); const tail = ptAt(q.p, Math.max(0, d - 70));
+      const gr = ctx.createLinearGradient(tail[0], tail[1], head[0], head[1]);
+      gr.addColorStop(0, `rgba(${ACC},0)`); gr.addColorStop(1, `rgba(${ACC},.55)`);
+      ctx.strokeStyle = gr; ctx.lineWidth = 1.6; ctx.lineCap = 'round';
+      ctx.beginPath(); ctx.moveTo(tail[0], tail[1]);
+      let acc = 0; for (let i = 1; i < q.p.length; i++) { const l = Math.hypot(q.p[i][0] - q.p[i - 1][0], q.p[i][1] - q.p[i - 1][1]); const a0 = acc, a1 = acc + l; if (a1 > d - 70 && a0 < d) { const pt = ptAt(q.p, Math.min(a1, d)); ctx.lineTo(pt[0], pt[1]); } acc = a1; }
+      ctx.stroke();
+      ctx.fillStyle = `rgba(${ACC},.9)`; ctx.beginPath(); ctx.arc(head[0], head[1], 1.8, 0, Math.PI * 2); ctx.fill();
+    }
+  }
+  function loop(ts) { draw(ts); raf = requestAnimationFrame(loop); }
+  function start() { if (!raf && !REDUCED && !document.hidden) raf = requestAnimationFrame(loop); }
+  function stop() { cancelAnimationFrame(raf); raf = 0; }
+  const kick = () => (window.requestIdleCallback || ((f) => setTimeout(f, 800)))(() => { build(); cv.parentNode.classList.add('ready'); start(); });
+  if (document.readyState === 'complete') kick(); else addEventListener('load', kick, { once:true });
+  let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(build, 150); }, { passive:true });
+  document.addEventListener('visibilitychange', () => document.hidden ? stop() : start());
+  // subtle parallax
+  if (!REDUCED) addEventListener('scroll', () => { const y = scrollY * -.06; if (y !== scrollOff) { scrollOff = y; cv.style.transform = st.style.transform = `translate3d(0,${y}px,0)`; } }, { passive:true });
+  function mulberry(a) { return () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
 })();
 
-/* ---------- typed ---------- */
-const roles=['embedded_systems','pcb_design','circuit_analysis','hardware_prototyping','firmware'];
-const typedEl=document.getElementById('typed');
-let ri=0,ci=0,del=false;
-(function type(){
-  const w=roles[ri];
-  typedEl.textContent=w.slice(0,ci);
-  if(!del){if(++ci>w.length+8){del=true}}
-  else{if(--ci===0){del=false;ri=(ri+1)%roles.length}}
-  setTimeout(type,del?38:ci>w.length?70:85);
+/* ------------------------------------------------------------ cursor */
+(() => {
+  const c = $('#cursor'); if (!c || !FINE || REDUCED) return;
+  let x = -100, y = -100, tx = x, ty = y, on = false;
+  addEventListener('pointermove', e => { tx = e.clientX; ty = e.clientY; if (!on) { on = true; c.classList.add('on'); } }, { passive:true });
+  document.addEventListener('pointerleave', () => { on = false; c.classList.remove('on'); });
+  const sel = 'a,button,[role=button],input,.chip,.bit,summary';
+  document.addEventListener('pointerover', e => c.classList.toggle('hover', !!e.target.closest(sel)));
+  (function step() { x += (tx - x) * .28; y += (ty - y) * .28; c.style.transform = `translate3d(${x}px,${y}px,0) translate(-50%,-50%)`; requestAnimationFrame(step); })();
 })();
 
-/* ---------- reveal ---------- */
-const io=new IntersectionObserver(es=>es.forEach(e=>{
-  if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
-}),{threshold:.12});
-document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+/* ------------------------------------------------------------ hero entrance */
+(() => {
+  const lines = $$('.hero h1 .ln span');
+  if (REDUCED) return;
+  lines.forEach((s, i) => { s.style.transform = 'translateY(110%)'; s.animate([{ transform:'translateY(110%)' }, { transform:'translateY(0)' }], { duration:900, delay:120 + i * 110, easing:'cubic-bezier(.16,1,.3,1)', fill:'forwards' }); });
+})();
 
-/* ---------- counters ---------- */
-const cio=new IntersectionObserver(es=>es.forEach(e=>{
-  if(!e.isIntersecting)return;
-  const el=e.target,to=+el.dataset.to,t0=performance.now();
-  (function step(t){const pp=Math.min((t-t0)/1400,1);
-    el.textContent=Math.round(to*(1-Math.pow(1-pp,3)));
-    if(pp<1)requestAnimationFrame(step)})(t0);
-  cio.unobserve(el);
-}),{threshold:.6});
-document.querySelectorAll('.count').forEach(el=>cio.observe(el));
+/* ------------------------------------------------------------ pause offscreen SVG animations */
+const liveIO = new IntersectionObserver(es => { for (const e of es) e.target.classList.toggle('live', e.isIntersecting); }, { rootMargin:'80px 0px' });
+function watchLive(root) { $$('.viz, .cs-viz', root).forEach(el => liveIO.observe(el)); }
+watchLive(document);
 
-/* ---------- HUD toasts ---------- */
-const hud=document.getElementById('hud');
-const seen=new Set();
-const tio=new IntersectionObserver(es=>es.forEach(e=>{
-  if(!e.isIntersecting)return;
-  const s=e.target;if(seen.has(s.id)||!s.dataset.toast)return;seen.add(s.id);
-  if(reduced)return;
-  const t=document.createElement('div');t.className='toast';t.textContent=s.dataset.toast;
-  hud.appendChild(t);setTimeout(()=>t.remove(),2500);
-}),{threshold:.25});
-sections.forEach(s=>tio.observe(s));
+/* ------------------------------------------------------------ reveal on scroll */
+const revealIO = new IntersectionObserver((es) => { for (const e of es) if (e.isIntersecting) { e.target.classList.add('in'); revealIO.unobserve(e.target); } }, { rootMargin:'0px 0px -8% 0px', threshold:.08 });
+$$('.reveal').forEach(el => revealIO.observe(el));
 
-/* ---------- active nav ---------- */
-const links=document.querySelectorAll('.nav-links a:not(.nav-cta)');
-const nio=new IntersectionObserver(es=>es.forEach(e=>{
-  if(e.isIntersecting){
-    links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id));
-  }
-}),{rootMargin:'-40% 0px -55% 0px'});
-sections.forEach(s=>nio.observe(s));
+/* ------------------------------------------------------------ nav current + mobile nav */
+(() => {
+  const links = $$('.nav a'); const map = new Map(links.map(a => [a.getAttribute('href').slice(1), a]));
+  const io = new IntersectionObserver(es => { for (const e of es) if (e.isIntersecting) { links.forEach(a => a.removeAttribute('aria-current')); const a = map.get(e.target.id); if (a) a.setAttribute('aria-current', 'true'); } }, { rootMargin:'-40% 0px -55% 0px' });
+  $$('main section[id]').forEach(s => io.observe(s));
+  const btn = $('#menuBtn'), m = $('#mnav');
+  const set = (o) => { m.classList.toggle('open', o); btn.setAttribute('aria-expanded', String(o)); btn.setAttribute('aria-label', o ? 'Close menu' : 'Open menu'); document.body.classList.toggle('no-scroll', o); };
+  btn.addEventListener('click', () => set(!m.classList.contains('open')));
+  m.addEventListener('click', e => { if (e.target.closest('a')) set(false); });
+  addEventListener('keydown', e => { if (e.key === 'Escape' && m.classList.contains('open')) set(false); });
+})();
 
-/* ---------- click sparks ---------- */
-if(!reduced)addEventListener('pointerdown',e=>{
-  for(let i=0;i<10;i++){
-    const s=document.createElement('div');s.className='spark';
-    const a=Math.random()*Math.PI*2,d=30+Math.random()*50;
-    s.style.left=e.clientX+'px';s.style.top=e.clientY+'px';
-    s.style.setProperty('--dx',Math.cos(a)*d+'px');
-    s.style.setProperty('--dy',Math.sin(a)*d+'px');
-    if(i%3===0)s.style.background='var(--acc2)';
-    document.body.appendChild(s);setTimeout(()=>s.remove(),600);
-  }
+/* ------------------------------------------------------------ copy buttons */
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-copy]'); if (!b) return;
+  e.preventDefault(); e.stopPropagation();
+  navigator.clipboard?.writeText(b.dataset.copy).then(() => toast('Copied ' + b.dataset.copy)).catch(() => toast(b.dataset.copy));
 });
 
-/* ---------- mobile menu ---------- */
-const burger=document.getElementById('burger'),navLinks=document.getElementById('navLinks');
-burger.addEventListener('click',()=>{burger.classList.toggle('open');navLinks.classList.toggle('open')});
-navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{burger.classList.remove('open');navLinks.classList.remove('open')}));
+/* ------------------------------------------------------------ projects (accordion) */
+function initProjects(root) {
+  $$('.proj', root).forEach(p => {
+    const btn = $('.proj-sum', p);
+    btn.addEventListener('click', () => setProj(p, !p.classList.contains('open')));
+  });
+}
+function setProj(p, open) { p.classList.toggle('open', open); $('.proj-sum', p).setAttribute('aria-expanded', String(open)); }
+function showProject(id, root) {
+  const p = $(`.proj[data-proj="${id}"]`, root); if (!p) return;
+  setProj(p, true);
+  const scroller = root.closest?.('.win-body') || null;
+  const top = p.getBoundingClientRect().top;
+  if (scroller) scroller.scrollBy({ top: top - scroller.getBoundingClientRect().top - 16, behavior: REDUCED ? 'auto' : 'smooth' });
+  else scrollTo({ top: scrollY + top - 70, behavior: REDUCED ? 'auto' : 'smooth' });
+}
 
-onScroll();
+/* ------------------------------------------------------------ skills system */
+function initSkills(root) {
+  const host = $('[data-skill-groups]', root), panel = $('[data-skill-panel]', root); if (!host || !panel) return;
+  host.innerHTML = '';
+  for (const g of SKILLS) {
+    const d = document.createElement('div'); d.className = 'skill-group';
+    d.innerHTML = `<h3>${g.g}</h3><div class="chips" role="group" aria-label="${g.g}"></div>`;
+    const chips = $('.chips', d);
+    for (const [name, ev] of g.items) {
+      const b = document.createElement('button'); b.className = 'chip'; b.type = 'button'; b.setAttribute('aria-pressed', 'false'); b.dataset.skillName = name;
+      b.innerHTML = `${name}<span class="n" aria-label="${ev.length} places used">${ev.length || '·'}</span>`;
+      b.addEventListener('click', () => selectSkill(name, root));
+      chips.appendChild(b);
+    }
+    host.appendChild(d);
+  }
+}
+function selectSkill(name, root) {
+  const panel = $('[data-skill-panel]', root); if (!panel) return;
+  let item = null; for (const g of SKILLS) for (const it of g.items) if (it[0] === name) item = it;
+  if (!item) return;
+  $$('.chip', root).forEach(c => c.setAttribute('aria-pressed', String(c.dataset.skillName === name)));
+  const [, ev] = item; const body = $('.sp-body', panel); $('[data-sp-count]', panel).textContent = ev.length ? `${ev.length} evidence` : 'listed';
+  const lvl = ev.length ? 'Applied in ' + ev.length + (ev.length > 1 ? ' places' : ' place') : 'On the résumé — not tied to a featured project yet';
+  body.innerHTML = `<h3>${name}</h3><p class="lvl">${lvl}</p>` + (ev.length ? `<div class="sp-list">${ev.map(([k, how]) => { const e = EV[k]; return `<button type="button" data-goto="${k}"><span><span class="w">${e.w}</span><span class="h">${how}</span></span><span class="arr">${e.type === 'project' ? 'open ↗' : 'view →'}</span></button>`; }).join('')}</div>` : `<p class="sp-empty">${name} is listed on the résumé as a working skill, but none of the featured case files use it directly. Ask me about it.</p>`);
+  $$('[data-goto]', body).forEach(b => b.addEventListener('click', () => gotoEvidence(b.dataset.goto, root)));
+}
+function gotoEvidence(k, root) {
+  const e = EV[k]; const inWin = !!root.closest?.('.win');
+  if (e.type === 'project') {
+    if (inWin || isMobile() && inWin) { const w = WM.open('projects'); showProject(e.id, w.body); }
+    else { showProject(e.id, document); }
+  } else {
+    if (inWin) WM.open(e.id); else location.hash = '#' + e.id;
+  }
+}
+function focusSkill(name, root) {
+  const inWin = !!root.closest?.('.win');
+  if (inWin) { const w = WM.open('skills'); selectSkill(name, w.body); }
+  else { selectSkill(name, document); const s = $('#skills'); scrollTo({ top: s.offsetTop - 60, behavior: REDUCED ? 'auto' : 'smooth' }); }
+}
+document.addEventListener('click', e => { const b = e.target.closest('.tech [data-skill]'); if (b) focusSkill(b.dataset.skill, b); });
+
+/* ------------------------------------------------------------ FPGA clock sim */
+function initClockViz(root) {
+  $$('[data-clockviz]', root).forEach(v => {
+    let s = 0, m = 0, h = 0, fast = false, alarm = false, tmr = 0;
+    const f = { s: $('[data-f="s"]', v), m: $('[data-f="m"]', v), h: $('[data-f="h"]', v) };
+    const cs = $('[data-w="cs"]', v), cm = $('[data-w="cm"]', v), al = $('[data-w="al"]', v), led = $('[data-led]', v), st = $('[data-state]', v), tick = $('[data-tick]', v);
+    const aH = $('input[aria-label="Alarm hour"]', v), aM = $('[data-alarm-m]', v);
+    const pad = n => String(n).padStart(2, '0');
+    const flash = (el) => { el.classList.add('hi'); setTimeout(() => el.classList.remove('hi'), fast ? 60 : 300); };
+    function step() {
+      s++; let c1 = false, c2 = false;
+      if (s === 60) { s = 0; m++; c1 = true; if (m === 60) { m = 0; h = (h + 1) % 24; c2 = true; } }
+      f.s.textContent = pad(s); f.m.textContent = pad(m); f.h.textContent = pad(h);
+      f.s.classList.toggle('hi', true); setTimeout(() => f.s.classList.remove('hi'), 80);
+      if (c1) flash(cs); if (c2) flash(cm);
+      const match = h === (+aH.value || 0) && m === (+aM.value || 0);
+      if (match !== alarm) { alarm = match; al.classList.toggle('hi', alarm); led.setAttribute('fill', alarm ? '#f0b64a' : '#1a1f26'); led.setAttribute('stroke', alarm ? '#f0b64a' : '#2f3742'); st.textContent = alarm ? 'ALARM (Q=11)' : 'RUN (Q=01)'; }
+      tick.textContent = fast ? 'tick ×60' : 'tick';
+    }
+    function run() { clearInterval(tmr); tmr = setInterval(() => { if (!v.isConnected) return clearInterval(tmr); if (document.hidden) return; step(); }, fast ? 1000 / 60 : 1000); }
+    $('[data-fast]', v).addEventListener('click', e => { fast = !fast; e.currentTarget.setAttribute('aria-pressed', String(fast)); run(); });
+    $('[data-reset]', v).addEventListener('click', () => { s = m = h = 0; step(); s = 0; f.s.textContent = '00'; });
+    run();
+  });
+}
+
+/* ------------------------------------------------------------ window manager */
+const WM = (() => {
+  const host = $('#windows'), dock = $('#dock'), tabs = $('#dockTabs');
+  const wins = new Map(); let z = 10, n = 0;
+  const ICON = { min:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/></svg>', max:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="5" width="14" height="14" rx="2"/></svg>', close:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>' };
+  function open(id) {
+    if (wins.has(id)) { const w = wins.get(id); restore(w); focus(w); return w; }
+    const sec = document.getElementById(id); if (!sec) return null;
+    const title = sec.dataset.winTitle || id;
+    const el = document.createElement('section'); el.className = 'win'; el.setAttribute('role', 'dialog'); el.setAttribute('aria-label', title); el.tabIndex = -1;
+    el.innerHTML = `<div class="win-bar"><span class="t"><i aria-hidden="true"></i><b>${title}</b><span class="dim">— ${$('h2', sec)?.textContent || ''}</span></span>
+      <button class="wbtn min-btn" aria-label="Minimize window">${ICON.min}</button><button class="wbtn max-btn" aria-label="Maximize window">${ICON.max}</button><button class="wbtn close" aria-label="Close window">${ICON.close}</button></div><div class="win-body"></div>`;
+    const body = $('.win-body', el);
+    const clone = $('.wrap', sec).cloneNode(true);
+    // namespace ids inside the clone
+    const suffix = '-w' + (++n);
+    const renamed = new Map();
+    $$('[id]', clone).forEach(x => { renamed.set(x.id, x.id + suffix); x.id += suffix; });
+    $$('[for],[aria-labelledby],[aria-controls]', clone).forEach(x => { for (const a of ['for', 'aria-labelledby', 'aria-controls']) { const v = x.getAttribute(a); if (v && renamed.has(v)) x.setAttribute(a, renamed.get(v)); } });
+    $$('.reveal', clone).forEach(r => r.classList.add('in'));
+    $$('.proj', clone).forEach(p => setProj(p, false));
+    body.appendChild(clone);
+    initProjects(body); initSkills(body); initClockViz(body); watchLive(body);
+    // internal anchors → windows
+    body.addEventListener('click', e => { const a = e.target.closest('a[href^="#"]'); if (!a) return; const tid = a.getAttribute('href').slice(1); const t = document.getElementById(tid); if (t && t.dataset.winTitle) { e.preventDefault(); open(tid); } else if (t) { e.preventDefault(); close(w); location.hash = '#' + tid; } });
+    const w = { id, el, body, min:false, max:false };
+    wins.set(id, w); host.appendChild(el);
+    // position (cascade)
+    const k = (wins.size - 1) % 6; const ww = el.offsetWidth, wh = el.offsetHeight;
+    el.style.left = Math.max(8, (innerWidth - ww) / 2 + k * 28 - 40) + 'px';
+    el.style.top = Math.max(60, (innerHeight - wh) / 2 + k * 22 - 20) + 'px';
+    el.style.zIndex = ++z;
+    $('.close', el).addEventListener('click', () => close(w));
+    $('.min-btn', el).addEventListener('click', () => minimize(w));
+    $('.max-btn', el).addEventListener('click', () => { w.max = !w.max; el.classList.toggle('max', w.max); });
+    el.addEventListener('pointerdown', () => focus(w));
+    el.addEventListener('keydown', e => { if (e.key === 'Escape') { e.stopPropagation(); close(w); } });
+    drag(w);
+    if (!REDUCED) el.animate([{ opacity:0, transform:'scale(.96) translateY(10px)' }, { opacity:1, transform:'none' }], { duration:320, easing:'cubic-bezier(.16,1,.3,1)' });
+    focus(w); tabsRender(); dock.classList.add('show'); syncScroll();
+    el.focus({ preventScroll:true });
+    return w;
+  }
+  function focus(w) { wins.forEach(x => x.el.classList.remove('focus')); w.el.classList.add('focus'); w.el.style.zIndex = ++z; tabsRender(); }
+  function minimize(w) { w.min = true; w.el.classList.add('minimized'); tabsRender(); syncScroll(); }
+  function restore(w) { w.min = false; w.el.classList.remove('minimized'); syncScroll(); }
+  function close(w) {
+    const done = () => { w.el.remove(); wins.delete(w.id); tabsRender(); if (!wins.size) dock.classList.remove('show'); syncScroll(); };
+    if (REDUCED) return done();
+    w.el.animate([{ opacity:1, transform:'none' }, { opacity:0, transform:'scale(.97) translateY(8px)' }], { duration:200, easing:'ease-in' }).onfinish = done;
+  }
+  function closeAll() { [...wins.values()].forEach(close); }
+  function syncScroll() { const anyOpen = [...wins.values()].some(w => !w.min); document.body.classList.toggle('no-scroll', anyOpen && isMobile()); }
+  function tabsRender() {
+    tabs.innerHTML = '';
+    wins.forEach(w => { const b = document.createElement('button'); b.className = 'dtab' + (w.el.classList.contains('focus') && !w.min ? ' active' : '') + (w.min ? ' min' : ''); b.innerHTML = `<i aria-hidden="true"></i>${$('.win-bar b', w.el).textContent}`; b.setAttribute('aria-label', (w.min ? 'Restore ' : 'Focus ') + w.id + ' window'); b.addEventListener('click', () => { if (w.min) restore(w); else if (w.el.classList.contains('focus')) minimize(w); focus(w); }); tabs.appendChild(b); });
+  }
+  function drag(w) {
+    const bar = $('.win-bar', w.el); let sx, sy, ox, oy, on = false;
+    bar.addEventListener('pointerdown', e => { if (e.target.closest('button') || isMobile() || w.max) return; on = true; sx = e.clientX; sy = e.clientY; ox = w.el.offsetLeft; oy = w.el.offsetTop; bar.setPointerCapture(e.pointerId); });
+    bar.addEventListener('pointermove', e => { if (!on) return; const nx = Math.min(innerWidth - 80, Math.max(-w.el.offsetWidth + 120, ox + e.clientX - sx)); const ny = Math.min(innerHeight - 60, Math.max(52, oy + e.clientY - sy)); w.el.style.left = nx + 'px'; w.el.style.top = ny + 'px'; });
+    const up = () => { on = false; }; bar.addEventListener('pointerup', up); bar.addEventListener('pointercancel', up);
+    bar.addEventListener('dblclick', e => { if (e.target.closest('button') || isMobile()) return; w.max = !w.max; w.el.classList.toggle('max', w.max); });
+  }
+  $('#dockClose').addEventListener('click', closeAll);
+  addEventListener('resize', syncScroll, { passive:true });
+  return { open, close, closeAll, wins };
+})();
+document.addEventListener('click', e => { const b = e.target.closest('[data-open]'); if (b) { e.preventDefault(); WM.open(b.dataset.open); } });
+addEventListener('keydown', e => {
+  if (e.key === 'Escape') { const top = [...WM.wins.values()].filter(w => !w.min).sort((a, b) => +b.el.style.zIndex - +a.el.style.zIndex)[0]; if (top) WM.close(top); }
+  if ((e.metaKey || e.ctrlKey) && !e.shiftKey && /^[1-6]$/.test(e.key)) { const ids = ['projects', 'experience', 'skills', 'education', 'resume', 'contact']; e.preventDefault(); WM.open(ids[+e.key - 1]); }
+});
+
+/* ------------------------------------------------------------ init page-level */
+initProjects(document); initSkills(document); initClockViz(document);
+// deep link ?skill= / #project
+if (location.hash) { const id = location.hash.slice(1); const p = $(`.proj[data-proj="${id}"]`); if (p) setTimeout(() => showProject(id, document), 200); }
+// open first project by default on desktop so the page isn't a wall of collapsed rows
+if (!isMobile()) { const first = $('.proj'); if (first) setProj(first, true); }
+})();
+
 </script>
 </body>
 </html>
