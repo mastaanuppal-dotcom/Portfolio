@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Alarm Clock Demo · Mastaan Uppal</title>
+<meta name="description" content="Demo video of a digital alarm clock written in VHDL on a Cyclone V FPGA (DE10-Standard). ENSC 252 final project.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0d10;--surface:#14181d;--line:#242a32;--line-2:#2f3742;--text:#e9ecef;--text-2:#aab3bd;--text-3:#808b98;--accent:#f0b64a;--accent-ink:#1a1204;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:960px;margin:0 auto;padding:28px 16px 56px}
+.back{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--text-3);text-decoration:none}
+.back:hover{color:var(--accent)}
+.kicker{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:28px 0 8px}
+h1{margin:0 0 8px;font-size:clamp(24px,4vw,34px);font-weight:600;letter-spacing:-.01em;line-height:1.15}
+.sub{color:var(--text-2);margin:0 0 22px}
+.player{background:#000;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+video{display:block;width:100%;aspect-ratio:16/9;background:#000}
+.bar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:10px 12px;border-top:1px solid var(--line);background:var(--surface);font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--text-3)}
+.bar button{font:inherit;color:var(--text-2);background:transparent;border:1px solid var(--line-2);border-radius:6px;padding:4px 10px;cursor:pointer}
+.bar button:hover{border-color:var(--accent);color:var(--text)}
+.bar button[aria-current="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.bar .sp{flex:1}
+.links{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 0}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border:1px solid var(--line-2);border-radius:6px;text-decoration:none;font-size:14px;color:var(--text)}
+.btn:hover{border-color:var(--accent)}
+.btn.pri{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-weight:600}
+table{width:100%;border-collapse:collapse;margin-top:28px;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--text-3);font-weight:500;font-family:"JetBrains Mono",monospace;font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+td:first-child{font-family:"JetBrains Mono",monospace;color:var(--accent);white-space:nowrap}
+h2{font-size:18px;margin:36px 0 0}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <a class="back" href="../">← Back to portfolio</a>
+  <p class="kicker">ENSC 252 · Final project</p>
+  <h1>Digital Alarm Clock in VHDL on a Cyclone V FPGA</h1>
+  <p class="sub">Demo on a Terasic DE10-Standard board: normal display, setting the time, setting the alarm, the alarm firing, and fast demo mode. By Mastaan Uppal &amp; Eugene Magsino.</p>
+
+  <div class="player">
+    <video id="v" controls playsinline preload="metadata" poster="poster.jpg">
+      <source src="video/demo-part0.mp4" type="video/mp4">
+    </video>
+    <div class="bar">
+      <span>Part</span>
+      <span id="parts"></span>
+      <span class="sp"></span>
+      <span>plays straight through · 3:47 total</span>
+    </div>
+  </div>
+
+  <div class="links">
+    <a class="btn pri" href="https://github.com/mastaanuppal-dotcom/Portfolio/tree/main/alarm-clock" target="_blank" rel="noopener">View the VHDL source on GitHub</a>
+    <a class="btn" href="../#projects">Portfolio</a>
+  </div>
+
+  <h2>Controls</h2>
+  <table>
+    <thead><tr><th>Input</th><th>Function</th></tr></thead>
+    <tbody>
+      <tr><td>KEY0</td><td>Hard reset: time to 12:00:00, alarm to 00:00:00</td></tr>
+      <tr><td>KEY1</td><td>Cycle mode: display time → set time → set alarm</td></tr>
+      <tr><td>KEY2</td><td>Cycle edit field: seconds → minutes → hours</td></tr>
+      <tr><td>KEY3</td><td>Increment the selected field</td></tr>
+      <tr><td>SW8</td><td>Alarm stop: clears an active alarm only</td></tr>
+      <tr><td>SW9</td><td>Fast demo mode: time runs 100× faster</td></tr>
+    </tbody>
+  </table>
+</main>
+<script>
+(function(){
+  var srcs=[0,1,2,3,4].map(function(i){return "video/demo-part"+i+".mp4"});
+  var v=document.getElementById("v"), box=document.getElementById("parts"), cur=0, btns=[];
+  srcs.forEach(function(s,i){
+    var b=document.createElement("button"); b.type="button"; b.textContent=i+1;
+    b.setAttribute("aria-label","Play part "+(i+1)+" of "+srcs.length);
+    b.onclick=function(){load(i,true)}; box.appendChild(b); btns.push(b);
+  });
+  function mark(){btns.forEach(function(b,i){b.setAttribute("aria-current",i===cur?"true":"false")})}
+  function load(i,play){cur=i; v.src=srcs[i]; v.load(); mark(); if(play){var p=v.play(); if(p&&p.catch)p.catch(function(){});}
+    if(i+1<srcs.length){var l=document.createElement("link");l.rel="prefetch";l.href=srcs[i+1];document.head.appendChild(l);} }
+  v.addEventListener("ended",function(){ if(cur+1<srcs.length) load(cur+1,true); });
+  mark();
+})();
+</script>
+</body>
+</html>
