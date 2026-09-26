@@ -1,6 +1,6 @@
 # Digital Alarm Clock — VHDL on a Cyclone V FPGA
 
-**ENSC 252 final project (SFU)** · Mastaan Uppal & Eugene Magsino
+**ENSC 252 final project (SFU)** · Mastaan Uppal
 
 A 24-hour digital alarm clock written entirely in VHDL and demonstrated on a Terasic **DE10-Standard** board (Intel Cyclone V).
 

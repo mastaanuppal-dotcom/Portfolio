@@ -1,4 +1,4 @@
--- Mastaan Uppal, Eugene Magsino
+-- Mastaan Uppal
 
 library ieee;
 use ieee.std_logic_1164.all;
